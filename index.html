@@ -1,1806 +1,267 @@
-<title>RWOB Intake — Flight Plan to Sobriety</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HALO GSRT Pathway</title>
+<meta name="description" content="Street-level intake → 3-month MASH Antifragile recovery camp → paid work at GSRT Earthworks. Proposal, costed model, evidence trail and intake prototype. Modelled figures, not pilot data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
-
-:root {
-  --ground: #FFFFFF;
-  --surface: #F5F2F7;
-  --surface-alt: #ECE7F0;
-  --ink: #25252A;
-  --ink-secondary: #4A4A50;
-  --ink-tertiary: #6A6A72;
-  --border: #C8C3B8;
-  --border-light: #E3DFD8;
-
-  --red: #B82828;
-  --red-bg: rgba(184,40,40,0.07);
-  --blue: #1A6F8F;
-  --blue-bg: rgba(26,111,143,0.07);
-  --yellow: #B8920A;
-  --yellow-bg: rgba(184,146,10,0.07);
-  --white-col: #7A756E;
-  --white-bg: rgba(122,117,110,0.06);
-  --black-col: #3A3A3E;
-  --black-bg: rgba(58,58,62,0.07);
-  --green: #2A7A3A;
-  --green-bg: rgba(42,122,58,0.07);
-  --gold: #9A7A10;
-
-  --accent: #752761;
-  --accent-light: rgba(117,39,97,0.10);
-  --accent-2: #3B7E7A;
-  --warm: #D6C3A8;
-
-  --dose-d: #7B5EA7;
-  --dose-o: #B85C6E;
-  --dose-s: #C4922A;
-  --dose-e: #3D8B7A;
+:root{
+  --bg:#F3ECDC; --panel:#FBF7EE; --ink:#1E1E1A; --muted:#5C574B; --line:#D9CFB8;
+  --green:#1F4D3A; --navy:#1D2F4F; --gold:#7A5C14; --red:#8E2F23;
+  --green-soft:#E3EBE3; --gold-soft:#F1E6C8;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --ground: #0F1118;
-    --surface: #181B24;
-    --surface-alt: #1E2130;
-    --ink: #E2DFD8;
-    --ink-secondary: #9A968F;
-    --ink-tertiary: #6A665F;
-    --border: #2C2F3A;
-    --border-light: #232630;
-    --red: #D04040;
-    --red-bg: rgba(208,64,64,0.12);
-    --blue: #2A9AC0;
-    --blue-bg: rgba(42,154,192,0.12);
-    --yellow: #D4A820;
-    --yellow-bg: rgba(212,168,32,0.12);
-    --white-col: #B0ACA5;
-    --white-bg: rgba(176,172,165,0.08);
-    --black-col: #A0A0A8;
-    --black-bg: rgba(160,160,168,0.10);
-    --green: #3AAA50;
-    --green-bg: rgba(58,170,80,0.12);
-    --gold: #D4A820;
-    --accent: #C98BB9;
-  --accent-2: #6FB5B0;
-  --warm: #D6C3A8;
-    --accent-light: rgba(201,139,185,0.14);
-    --dose-d: #9B7EC7;
-    --dose-o: #D87C8E;
-    --dose-s: #E4B24A;
-    --dose-e: #5DAB9A;
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#171a17; --panel:#20241f; --ink:#ECE6D6; --muted:#ABA48F; --line:#363b33;
+    --green:#7FBF9C; --navy:#9DB4DB; --gold:#D9B56A; --red:#E08A7C;
+    --green-soft:#223127; --gold-soft:#2f2a1c;
   }
 }
-:root[data-theme="dark"] {
-  --ground: #0F1118;
-  --surface: #181B24;
-  --surface-alt: #1E2130;
-  --ink: #E2DFD8;
-  --ink-secondary: #9A968F;
-  --ink-tertiary: #6A665F;
-  --border: #2C2F3A;
-  --border-light: #232630;
-  --red: #D04040;
-  --red-bg: rgba(208,64,64,0.12);
-  --blue: #2A9AC0;
-  --blue-bg: rgba(42,154,192,0.12);
-  --yellow: #D4A820;
-  --yellow-bg: rgba(212,168,32,0.12);
-  --white-col: #B0ACA5;
-  --white-bg: rgba(176,172,165,0.08);
-  --black-col: #A0A0A8;
-  --black-bg: rgba(160,160,168,0.10);
-  --green: #3AAA50;
-  --green-bg: rgba(58,170,80,0.12);
-  --gold: #D4A820;
-  --accent: #C98BB9;
-  --accent-2: #6FB5B0;
-  --warm: #D6C3A8;
-  --accent-light: rgba(201,139,185,0.14);
-  --dose-d: #9B7EC7;
-  --dose-o: #D87C8E;
-  --dose-s: #E4B24A;
-  --dose-e: #5DAB9A;
+:root[data-theme="dark"]{
+  --bg:#171a17; --panel:#20241f; --ink:#ECE6D6; --muted:#ABA48F; --line:#363b33;
+  --green:#7FBF9C; --navy:#9DB4DB; --gold:#D9B56A; --red:#E08A7C;
+  --green-soft:#223127; --gold-soft:#2f2a1c;
 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Source Sans 3",system-ui,sans-serif}
+a{color:var(--green)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.15;margin:0}
+h2{font-size:2.1rem;color:var(--navy);margin-bottom:.4rem}
+h3{font-size:1.35rem;color:var(--ink)}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+section{padding:56px 0;border-top:1px solid var(--line)}
+.lede{color:var(--muted);max-width:68ch;margin:.5rem 0 1.6rem}
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;height:56px;overflow-x:auto;white-space:nowrap}
+nav .brand{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.25rem;color:var(--green);text-decoration:none;margin-right:auto}
+nav a.l{color:var(--muted);text-decoration:none;font-size:.92rem;font-weight:600}
+nav a.l:hover{color:var(--green)}
+#theme{background:none;border:1px solid var(--line);color:var(--muted);border-radius:6px;padding:4px 9px;cursor:pointer;font:inherit;font-size:.85rem}
 
-body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background: var(--ground);
-  color: var(--ink);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
+/* hero */
+.hero{padding:72px 0 56px;border-top:0}
+.hero h1{font-size:clamp(2.6rem,7vw,4.4rem);color:var(--green)}
+.hero .sub{font-family:"Cormorant Garamond",serif;font-size:clamp(1.3rem,3vw,1.75rem);color:var(--navy);margin:.6rem 0 1.4rem;max-width:30ch}
+.status{display:inline-block;border:1px solid var(--red);color:var(--red);border-radius:999px;padding:4px 14px;font-size:.85rem;font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.95rem}
+.btn.p{background:var(--green);color:var(--bg)}
+.btn.s{border:1.5px solid var(--green);color:var(--green)}
 
-/* ── LAYOUT ── */
-.app-shell { display: flex; min-height: 100vh; }
+/* flow */
+.flow{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(7,1fr);gap:8px;counter-reset:s}
+.flow li{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 12px 16px;counter-increment:s}
+.flow li::before{content:counter(s);display:block;font-family:"Cormorant Garamond",serif;font-size:1.6rem;font-weight:700;color:var(--gold);line-height:1}
+.flow b{display:block;margin:.35rem 0 .2rem;font-size:.98rem;color:var(--navy)}
+.flow span{font-size:.85rem;color:var(--muted);line-height:1.4;display:block}
+.flow li.key{background:var(--green-soft);border-color:var(--green)}
+@media (max-width:900px){.flow{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.flow{grid-template-columns:1fr}}
 
-.sidebar {
-  width: 260px;
-  background: var(--surface);
-  border-right: 1px solid var(--border);
-  padding: 24px 0;
-  flex-shrink: 0;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-}
+/* honesty */
+.honest{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.honest div{border-left:3px solid var(--gold);background:var(--gold-soft);padding:12px 14px;border-radius:0 8px 8px 0;font-size:.95rem}
+.honest b{color:var(--ink)}
 
-.sidebar-logo {
-  padding: 0 20px 20px;
-  border-bottom: 1px solid var(--border-light);
-  margin-bottom: 12px;
-}
-.sidebar-logo h1 {
-  font-family:'DM Sans',system-ui,sans-serif;font-weight:700;
-  font-size: 18px;
-  
-  color: var(--ink);
-  line-height: 1.2;
-}
-.sidebar-logo .sub {
-  font-size: 11px;
-  font-family:'DM Sans',system-ui,sans-serif;
-  color: var(--accent);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-top: 4px;
-}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:28px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
+.stat .n{font-family:"Cormorant Garamond",serif;font-size:2.2rem;font-weight:700;color:var(--green);line-height:1}
+.stat .t{font-weight:600;margin:.35rem 0 .2rem}
+.stat .f{font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-variant-numeric:tabular-nums}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);font-size:.95rem}
+th{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td.num,th.num{text-align:right}
+tr.hl td{background:var(--green-soft);font-weight:700}
+tr:last-child td{border-bottom:0}
+.note{font-size:.88rem;color:var(--muted);margin-top:10px}
 
-.nav-group {
-  padding: 8px 12px;
-}
-.nav-group-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-tertiary);
-  padding: 4px 8px;
-  margin-bottom: 4px;
-}
+/* docs */
+.docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.doc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column}
+.doc .tag{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.doc h3{margin:.3rem 0 .4rem}
+.doc p{font-size:.94rem;color:var(--muted);margin:0 0 14px;flex:1}
+.doc .links{display:flex;flex-wrap:wrap;gap:8px}
+.doc .links a{font-size:.85rem;font-weight:700;text-decoration:none;border:1px solid var(--line);border-radius:6px;padding:5px 10px;color:var(--green)}
+.doc .links a:hover{border-color:var(--green)}
+.doc.start{border:2px solid var(--green)}
 
-.nav-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--ink-secondary);
-  transition: all 0.15s;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-}
-.nav-item:hover { background: var(--surface-alt); color: var(--ink); }
-.nav-item.active { background: var(--accent-light); color: var(--accent); font-weight: 600; }
-.nav-item .icon { font-size: 16px; width: 20px; text-align: center; flex-shrink: 0; }
-.nav-item .badge {
-  margin-left: auto;
-  background: var(--accent-light);
-  color: var(--accent);
-  font-size: 10px;
-  font-weight: 600;
-  padding: 2px 7px;
-  border-radius: 10px;
-  font-family:'DM Sans',system-ui,sans-serif;
-}
+/* open */
+.open{columns:2 300px;column-gap:28px;padding-left:1.1rem;margin:0}
+.open li{margin-bottom:10px;break-inside:avoid}
 
-.sidebar-footer {
-  margin-top: auto;
-  padding: 16px 20px;
-  border-top: 1px solid var(--border-light);
-}
-.colour-band-mini {
-  display: flex; gap: 2px; border-radius: 3px; overflow: hidden; height: 4px;
-}
-.colour-band-mini div { flex: 1; }
-.sidebar-footer .meta {
-  font-size: 10px; color: var(--ink-tertiary); margin-top: 6px;
-  font-family:'DM Sans',system-ui,sans-serif;
-}
-
-.main-content {
-  flex: 1;
-  padding: 32px 40px 80px;
-  max-width: 960px;
-  overflow-y: auto;
-}
-
-/* ── VIEWS ── */
-.view { display: none; }
-.view.active { display: block; }
-
-/* ── PAGE HEADER ── */
-.page-header { margin-bottom: 32px; }
-.page-header .eyebrow {
-  font-family:'DM Sans',system-ui,sans-serif;
-  font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
-}
-.page-header h2 {
-  font-family:'DM Sans',system-ui,sans-serif;font-weight:700;
-  font-size: clamp(22px,3vw,30px);
-   line-height: 1.2; text-wrap: balance;
-}
-.page-header .desc {
-  font-size: 14px; color: var(--ink-secondary); margin-top: 8px; max-width: 680px;
-}
-
-/* ── QUESTIONNAIRE ── */
-.q-progress {
-  display: flex; align-items: center; gap: 12px; margin-bottom: 28px;
-  padding: 14px 18px; background: var(--surface); border: 1px solid var(--border-light);
-  border-radius: 8px;
-}
-.q-progress-bar { flex: 1; height: 6px; background: var(--surface-alt); border-radius: 3px; overflow: hidden; }
-.q-progress-fill { height: 100%; background: var(--accent); border-radius: 3px; transition: width 0.3s; }
-.q-progress-text { font-size: 12px; font-family:'DM Sans',system-ui,sans-serif; color: var(--ink-tertiary); white-space: nowrap; }
-
-.q-section {
-  background: var(--surface);
-  border: 1px solid var(--border-light);
-  border-radius: 8px;
-  margin-bottom: 16px;
-  overflow: hidden;
-}
-.q-section-header {
-  padding: 16px 20px;
-  display: flex; align-items: center; gap: 12px;
-  border-bottom: 1px solid var(--border-light);
-  cursor: pointer;
-}
-.q-section-header .colour-pip {
-  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
-}
-.q-section-header h3 {
-  font-family:'DM Sans',system-ui,sans-serif;font-weight:700;
-  font-size: 16px;  flex: 1;
-}
-.q-section-header .section-meta {
-  font-size: 11px; color: var(--ink-tertiary);
-  font-family:'DM Sans',system-ui,sans-serif;
-}
-.q-section-header .chevron {
-  color: var(--ink-tertiary); transition: transform 0.2s; font-size: 14px;
-}
-.q-section.open .chevron { transform: rotate(90deg); }
-
-.q-section-body { padding: 0; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-.q-section.open .q-section-body { max-height: 3000px; }
-
-.q-item {
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--border-light);
-}
-.q-item:last-child { border-bottom: none; }
-.q-item .q-label {
-  font-size: 13.5px; font-weight: 500; color: var(--ink); margin-bottom: 4px;
-}
-.q-item .q-sublabel {
-  font-size: 12px; color: var(--ink-tertiary); margin-bottom: 10px;
-}
-.q-scale {
-  display: flex; gap: 6px;
-}
-.q-scale label {
-  flex: 1; text-align: center; cursor: pointer;
-}
-.q-scale input { display: none; }
-.q-scale .chip {
-  display: block; padding: 7px 4px; border-radius: 5px; font-size: 11px;
-  font-weight: 500; background: var(--surface-alt); border: 1px solid var(--border-light);
-  color: var(--ink-secondary); transition: all 0.15s;
-}
-.q-scale input:checked + .chip {
-  background: var(--accent-light); border-color: var(--accent); color: var(--accent); font-weight: 600;
-}
-
-/* ── SAFETY GATE ── */
-.safety-banner {
-  background: var(--red-bg);
-  border: 1px solid var(--red);
-  border-radius: 8px;
-  padding: 16px 20px;
-  margin-bottom: 20px;
-  display: none;
-}
-.safety-banner.show { display: flex; gap: 12px; align-items: flex-start; }
-.safety-banner .icon { font-size: 20px; flex-shrink: 0; }
-.safety-banner h4 { color: var(--red); font-size: 14px; margin-bottom: 4px; }
-.safety-banner p { font-size: 13px; color: var(--ink-secondary); }
-
-/* ── BUTTONS ── */
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 10px 20px; border-radius: 6px; border: none;
-  font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.15s;
-  font-family: inherit;
-}
-.btn-primary { background: #752761; color: #fff; font-family:'DM Sans',system-ui,sans-serif; font-weight:600; }
-.btn-primary:hover { filter: brightness(1.1); }
-.btn-secondary { background: var(--surface-alt); color: var(--ink); border: 1px solid var(--border); }
-.btn-secondary:hover { background: var(--border-light); }
-.btn-danger { background: var(--red); color: #fff; }
-.btn-row { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
-
-/* ── RESULTS ── */
-.results-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
-  gap: 12px; margin-bottom: 28px;
-}
-.result-card {
-  background: var(--surface); border: 1px solid var(--border-light);
-  border-radius: 8px; padding: 16px; text-align: center;
-  border-top: 4px solid;
-}
-.result-card .score {
-  font-family:'DM Sans',system-ui,sans-serif;
-  font-size: 28px; font-weight: 700; line-height: 1;
-}
-.result-card .label {
-  font-size: 11px; font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.08em; margin-top: 6px; color: var(--ink-secondary);
-}
-.result-card .sublabel {
-  font-size: 11px; color: var(--ink-tertiary); margin-top: 2px;
-}
-
-/* ── COLOUR PROFILE ── */
-.colour-profile {
-  display: flex; gap: 8px; margin: 20px 0; flex-wrap: wrap;
-}
-.colour-tag {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;
-  letter-spacing: 0.04em;
-}
-
-/* ── ORG MATCHES ── */
-.match-section { margin-top: 32px; }
-.match-section h3 {
-  font-family:'DM Sans',system-ui,sans-serif;font-weight:700;
-  font-size: 20px; margin-bottom: 16px;
-}
-.match-card {
-  background: var(--surface);
-  border: 1px solid var(--border-light);
-  border-radius: 8px;
-  padding: 18px 20px;
-  margin-bottom: 10px;
-  border-left: 4px solid var(--accent);
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 12px;
-  align-items: start;
-}
-.match-card h4 { font-size: 14px; font-weight: 600; }
-.match-card .match-meta {
-  font-size: 12px; color: var(--ink-secondary); margin-top: 4px; line-height: 1.5;
-}
-.match-card .match-colours {
-  display: flex; gap: 4px; margin-top: 6px;
-}
-.match-card .colour-dot {
-  width: 12px; height: 12px; border-radius: 50%; border: 1px solid var(--border);
-}
-.match-card .match-score {
-  font-family:'DM Sans',system-ui,sans-serif;
-  font-size: 20px; font-weight: 700; color: var(--accent);
-  text-align: right;
-}
-.match-card .match-score-label {
-  font-size: 10px; color: var(--ink-tertiary); text-align: right;
-  text-transform: uppercase; letter-spacing: 0.06em;
-}
-
-/* ── DOSE BAR ── */
-.dose-bar-row {
-  display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
-}
-.dose-bar-label {
-  width: 90px; font-size: 11px; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.04em; text-align: right;
-}
-.dose-bar-track {
-  flex: 1; height: 10px; background: var(--surface-alt);
-  border-radius: 5px; overflow: hidden;
-}
-.dose-bar-fill { height: 100%; border-radius: 5px; transition: width 0.5s; }
-.dose-bar-val {
-  width: 40px; font-family:'DM Sans',system-ui,sans-serif;
-  font-size: 12px; font-weight: 600; text-align: right;
-}
-
-/* ── DIRECTORY ── */
-.dir-filters {
-  display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;
-}
-.filter-chip {
-  padding: 6px 14px; border-radius: 20px; font-size: 12px;
-  font-weight: 500; cursor: pointer; border: 1px solid var(--border);
-  background: var(--surface); color: var(--ink-secondary); transition: all 0.15s;
-}
-.filter-chip.active { border-color: var(--accent); background: var(--accent-light); color: var(--accent); font-weight: 600; }
-
-.dir-table-wrap {
-  overflow-x: auto; border: 1px solid var(--border-light); border-radius: 8px;
-}
-table.dir-table {
-  width: 100%; border-collapse: collapse; font-size: 13px;
-  font-variant-numeric: tabular-nums;
-}
-.dir-table thead { background: var(--surface-alt); }
-.dir-table th {
-  font-weight: 600; font-size: 11px; letter-spacing: 0.04em;
-  text-transform: uppercase; color: var(--ink-tertiary);
-  text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border);
-  white-space: nowrap;
-}
-.dir-table td {
-  padding: 10px 14px; border-bottom: 1px solid var(--border-light);
-  color: var(--ink-secondary); vertical-align: top; line-height: 1.5;
-}
-.dir-table tr:last-child td { border-bottom: none; }
-.dir-table tr:hover { background: var(--surface-alt); }
-.dir-table td strong { color: var(--ink); }
-
-/* ── STRESSOR MAP ── */
-.stressor-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-  gap: 12px; margin: 20px 0;
-}
-.stressor-card {
-  background: var(--surface); border: 1px solid var(--border-light);
-  border-radius: 8px; padding: 16px 18px; border-left: 4px solid;
-}
-.stressor-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
-.stressor-card p { font-size: 12px; color: var(--ink-secondary); line-height: 1.5; }
-.stressor-card .dose-tag {
-  display: inline-block; padding: 2px 8px; border-radius: 3px;
-  font-size: 10px; font-weight: 600; margin-top: 6px;
-  text-transform: uppercase; letter-spacing: 0.06em;
-}
-
-/* ── CALLOUT ── */
-.callout {
-  background: var(--accent-light); border-left: 3px solid var(--accent);
-  border-radius: 0 6px 6px 0; padding: 14px 18px; margin: 20px 0;
-  font-size: 14px; color: var(--ink); line-height: 1.6;
-}
-.callout strong { font-weight: 600; }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 800px) {
-  .sidebar { display: none; }
-  .main-content { padding: 20px 16px 60px; }
-  .mobile-nav {
-    display: flex !important; position: fixed; bottom: 0; left: 0; right: 0;
-    background: var(--surface); border-top: 1px solid var(--border);
-    padding: 8px 4px; z-index: 100; gap: 2px; overflow-x: auto;
-  }
-  .mobile-nav button {
-    flex: 0 0 auto; padding: 6px 12px; font-size: 18px;
-    background: none; border: none; border-radius: 6px; cursor: pointer;
-  }
-  .mobile-nav button.active { background: var(--accent-light); }
-}
-.mobile-nav { display: none; }
-
-/* ── PRINT ── */
-@media print {
-  .sidebar, .mobile-nav { display: none !important; }
-  .main-content { max-width: 100%; padding: 20px; }
-  .q-section-body { max-height: none !important; }
-}
-
-
-/* ── Integrated Architecture additions ── */
-.container { max-width: 760px; margin: 0 auto; padding: 24px 20px 80px; }
-.app-header { text-align:center; margin-bottom: 28px; }
-.app-header .eyebrow { font-family:'DM Sans',system-ui,sans-serif; font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); }
-.app-header h1 { font-family:'DM Sans',system-ui,sans-serif; font-weight:700; font-size: clamp(22px,4vw,30px); margin-top:6px; }
-.app-header .sub { font-size:13px; color:var(--ink-secondary); margin-top:8px; max-width:560px; margin-left:auto; margin-right:auto; }
-.disclosure { background:var(--surface); border:1px solid var(--border-light); border-radius:8px; padding:12px 16px; font-size:12px; color:var(--ink-tertiary); margin: 18px 0 28px; }
-.disclosure strong { color: var(--ink-secondary); }
-
-.step-dots { display:flex; gap:6px; justify-content:center; margin-bottom: 22px; }
-.step-dot { width:7px; height:7px; border-radius:50%; background:var(--border); }
-.step-dot.done { background: var(--accent); }
-.step-dot.now { background: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
-
-.panel { background: var(--ground); border:1px solid var(--border-light); border-radius: 12px; padding: 24px; margin-bottom: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.03); }
-.panel h2 { font-family:'DM Sans',system-ui,sans-serif; font-weight:700; font-size: 19px; margin-bottom: 6px; }
-.panel .lede { font-size: 13px; color: var(--ink-secondary); margin-bottom: 18px; line-height:1.5; }
-
-.field { margin-bottom: 18px; }
-.field label.flabel, .field span.flabel { display:block; font-size:13.5px; font-weight:600; margin-bottom:6px; }
-.field .fhint { font-size:12px; color:var(--ink-tertiary); margin-bottom:8px; }
-.field input[type=text], .field input[type=tel], .field input[type=email], .field textarea, .field select {
-  width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:7px;
-  font-size:14px; font-family:inherit; background:var(--ground); color:var(--ink);
-}
-.field textarea { min-height: 70px; resize:vertical; }
-
-.yn-row { display:flex; gap:10px; }
-.yn-row label { flex:1; }
-.yn-row input { display:none; }
-.yn-row .chip { display:block; text-align:center; padding:10px; border-radius:7px; border:1px solid var(--border);
-  background:var(--surface-alt); font-size:13px; font-weight:600; color:var(--ink-secondary); cursor:pointer; }
-.yn-row input:checked + .chip { background: var(--accent-light); border-color:var(--accent); color:var(--accent); }
-.yn-row.danger input:checked + .chip { background: var(--red-bg); border-color:var(--red); color:var(--red); }
-
-.chk-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(130px,1fr)); gap:8px; }
-.chk-grid label { display:flex; align-items:center; gap:8px; padding:9px 10px; border:1px solid var(--border-light);
-  border-radius:7px; font-size:13px; cursor:pointer; background:var(--surface); }
-.chk-grid input:checked ~ span, .chk-grid label:has(input:checked) { border-color:var(--accent); background:var(--accent-light); }
-
-.crisis-screen { background: var(--red-bg); border:2px solid var(--red); border-radius:12px; padding:28px 24px; text-align:center; }
-.crisis-screen h2 { color:var(--red); font-family:'DM Sans',system-ui,sans-serif; font-size:21px; margin-bottom:10px; }
-.crisis-screen p { font-size:14px; color:var(--ink); margin-bottom:14px; line-height:1.6; }
-.crisis-box { background:var(--ground); border:1px solid var(--red); border-radius:8px; padding:14px 16px; margin:14px 0; text-align:left; }
-.crisis-box .line { font-size:14px; margin-bottom:6px; }
-.crisis-box .line strong { color:var(--red); }
-
-.pending-tag { display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
-  background: var(--yellow-bg); color:#7a5f08; border:1px solid var(--yellow); border-radius:4px; padding:2px 8px; margin-left:6px; }
-.optional-tag { display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
-  background: var(--surface-alt); color:var(--ink-tertiary); border:1px solid var(--border); border-radius:4px; padding:2px 8px; margin-left:6px; }
-
-.hue-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-top:10px; }
-.hue-card { border:2px solid var(--border-light); border-radius:10px; padding:14px; cursor:pointer; background:var(--surface); }
-.hue-card.sel { border-color: var(--accent); background: var(--accent-light); }
-.hue-card .nm { font-family:'DM Sans',system-ui,sans-serif; font-weight:700; font-size:14px; }
-.hue-card .ds { font-size:11.5px; color:var(--ink-tertiary); margin-top:3px; }
-.hue-card .vb { font-size:10px; margin-top:6px; font-weight:600; }
-
-.scorebar-wrap { margin:4px 0 2px; }
-.scorebar { height:8px; border-radius:4px; background:var(--surface-alt); overflow:hidden; }
-.scorebar > div { height:100%; }
-.score-row { display:flex; justify-content:space-between; font-size:11.5px; color:var(--ink-tertiary); margin-bottom:3px; }
-
-.rule-box { background:var(--surface); border-left:3px solid var(--accent); border-radius:0 8px 8px 0; padding:12px 16px; font-size:12.5px; color:var(--ink-secondary); margin:14px 0; }
-
-.demo-box { background:var(--surface); border:1.5px dashed var(--accent); border-radius:8px; padding:14px 16px; margin:16px 0; }
-.demo-tag { display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.08em; color:var(--accent); background:var(--accent-light); padding:3px 8px; border-radius:4px; margin-bottom:10px; }
-.email-card { border:1px solid var(--border-light); border-radius:8px; padding:16px; margin-bottom:14px; background:var(--surface); }
-.email-card .em-to { font-size:11px; color:var(--ink-tertiary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:2px; }
-.email-card .em-addr { font-family:'DM Sans',system-ui,sans-serif; font-weight:700; font-size:14px; margin-bottom:10px; }
-.email-card .em-subject { font-weight:600; font-size:13px; margin-bottom:8px; }
-.email-card .em-body { font-size:12.5px; color:var(--ink-secondary); line-height:1.65; white-space:pre-wrap; background:var(--surface-alt); border-radius:6px; padding:12px; margin-bottom:8px; }
-.email-card .em-copy { font-size:11px; }
-
-
-/* ---- Member creation + clinician matching ---- */
-.mgrid { display:grid; grid-template-columns:1fr 1fr; gap:0 16px; }
-@media (max-width:560px){ .mgrid { grid-template-columns:1fr; } }
-.mgrid .field { min-width:0; }
-.mgrid input[type=text], .mgrid input[type=tel], .mgrid input[type=email], .mgrid select { width:100%; box-sizing:border-box; }
-.fnote { font-size:12px; color:var(--ink-tertiary); min-height:16px; margin-top:4px; }
-.fnote.bad { color:var(--red); }
-.fnote.ok { color:var(--accent); }
-.radio-row { display:flex; flex-wrap:wrap; gap:6px 16px; font-size:13px; color:var(--ink-secondary); }
-.radio-row label { display:flex; gap:6px; align-items:center; cursor:pointer; }
-.demo-box .fhint { font-size:12px; color:var(--ink-tertiary); line-height:1.55; }
-.mchips { display:flex; flex-wrap:wrap; gap:5px; margin-top:8px; }
-.mchip { font-size:10.5px; padding:3px 8px; border-radius:10px; border:1px solid var(--border); color:var(--ink-tertiary); background:var(--surface-alt); }
-.mchip.hit { border-color:var(--accent); color:var(--accent); background:var(--accent-light); font-weight:600; }
-.fit-line { font-size:12px; color:var(--ink-secondary); margin-top:6px; line-height:1.5; }
-.consent-row { display:flex; gap:8px; align-items:flex-start; font-size:12.5px; color:var(--ink-secondary); margin:12px 0; line-height:1.5; }
-.consent-row input { margin-top:3px; }
-.form-error { color:var(--red); font-size:13px; margin-top:10px; min-height:18px; }
-
-body { background: var(--ground); color: var(--ink); font-family: 'Inter', system-ui, sans-serif; }
+footer{border-top:1px solid var(--line);padding:36px 0 48px;font-size:.9rem;color:var(--muted)}
+.crisis{background:var(--navy);color:#fff;border-radius:10px;padding:14px 18px;margin-bottom:20px;font-size:.95rem}
+:root[data-theme="dark"] .crisis{color:#111}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .crisis{color:#111}}
 </style>
+</head>
+<body>
 
-<div class="container">
-  <div class="app-header">
-    <div class="eyebrow">Recovery Without Borders · Prototype</div>
-    <h1>Flight Plan to Sobriety — Intake &amp; Navigation</h1>
-    <p class="sub">One intake: Member profile → Safety check → RAFT → Targeted screens → Check-in → Colour profile → Services and clinicians → Your choice. Built by HALO Antifragile AI (Neil J. Schwab) for Recovery Without Borders to review — not yet an official RWOB system and not yet clinically reviewed.</p>
+<nav><div class="wrap">
+  <a class="brand" href="#top">HALO GSRT Pathway</a>
+  <a class="l" href="#pathway">Pathway</a>
+  <a class="l" href="#numbers">Numbers</a>
+  <a class="l" href="#documents">Documents</a>
+  <a class="l" href="#open">Still open</a>
+  <button id="theme" type="button" aria-label="Toggle light or dark mode">◐</button>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div class="eyebrow">MASH Antifragile · RWOB · GSRT Earthworks</div>
+  <h1>HALO GSRT Pathway</h1>
+  <p class="sub">From street-level intake to a three-month recovery camp to paid work restoring the land.</p>
+  <span class="status">Proposal and prototype: not funded, not in service, not clinically reviewed</span>
+  <div class="cta">
+    <a class="btn p" href="GSRT_Institutional_Dossier_24_One-Pagers.pdf">Read the 24-page dossier</a>
+    <a class="btn s" href="RWOB_Intake_MERGED.html">Try the intake demo</a>
+  </div>
+</div></header>
+
+<section id="pathway"><div class="wrap">
+  <div class="eyebrow">The pathway</div>
+  <h2>One person, seven steps</h2>
+  <p class="lede">A person caught in the cycle of emergency rooms, police contact and shelters is offered an honest choice, not an assignment. Path B leads through a peer-run, land-based camp, with medical care alongside it, never in place of it. It ends in paid work.</p>
+  <ol class="flow">
+    <li><b>Worker conversation</b><span>A trauma- and addiction-informed first contact</span></li>
+    <li><b>RWOB intake</b><span>Safety gate, RAFT, validated screens, colour routing</span></li>
+    <li><b>Choice Point</b><span>Path A and Path B presented honestly; Path B is never assigned</span></li>
+    <li class="key"><b>MASH Antifragile</b><span>3 months, 200 beds, 20 nodes, shadow pairing in the first month</span></li>
+    <li><b>Senior &amp; mentor</b><span>In month 3, shadow a newcomer of your own</span></li>
+    <li><b>DEEDSPROOF</b><span>Graduation badge: Trust · Stabilize · Begin</span></li>
+    <li class="key"><b>GSRT Earthworks</b><span>Paid environmental restoration at $22/hr</span></li>
+  </ol>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow">Read this first</div>
+  <h2>What is modelled and what is measured</h2>
+  <p class="lede">These documents were corrected to say only what can be backed up.</p>
+  <div class="honest">
+    <div><b>Every dollar figure is a simulation</b> built on conservative published floors. It becomes evidence only when pilot data replaces it.</div>
+    <div><b>Marcus and Laura are illustrative cases,</b> not real participants.</div>
+    <div><b>The W-score is a wellbeing index,</b> not dollars. It is never mixed with costs.</div>
+    <div><b>Nothing here was “verified” by AI.</b> Check the arithmetic yourself; every formula is shown.</div>
+    <div><b>Partners named are proposed.</b> None is signed.</div>
+  </div>
+</div></section>
+
+<section id="numbers"><div class="wrap">
+  <div class="eyebrow">The numbers · Conservative track</div>
+  <h2>What it costs and what it has to save</h2>
+  <p class="lede">One camp: 200 beds, about 600 three-month stays a year, with return stays housed inside the same beds.</p>
+  <div class="stats">
+    <div class="stat"><div class="n">$7,500</div><div class="t">per 3-month stay</div><div class="f">90 × $80 + 3 × $60 = $7,380, rounded up</div></div>
+    <div class="stat"><div class="n">$11.25M</div><div class="t">Year 1 gross</div><div class="f">$4.5M participants = the 40% stream; ÷ 0.40</div></div>
+    <div class="stat"><div class="n">≈$14.48M</div><div class="t">steady state with returns</div><div class="f">525 × 30 days × $82 = $1.29M; ÷ 0.40 = +$3.23M</div></div>
+    <div class="stat"><div class="n">23.4%</div><div class="t">break-even at $80K</div><div class="f">$18,750 per person ÷ $80,000</div></div>
   </div>
 
-  <div class="rule-box" style="border-color:var(--yellow);margin-top:0;"><strong>DEMO — for review only, not yet in service.</strong> This page does not store your answers and cannot contact anyone. In an emergency call <strong>9-1-1</strong>. For crisis support call or text <strong>9-8-8</strong>.</div>
-  <div class="step-dots" id="stepDots"></div>
+  <h3 style="margin-bottom:10px">Break-even: share of current public cost MASH must avoid</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Public cost / person / year</th><th>Track</th><th class="num">First stays</th><th class="num">With returns</th></tr></thead>
+    <tbody>
+      <tr><td>$120,000</td><td>Observed</td><td class="num">15.6%</td><td class="num">20.1%</td></tr>
+      <tr class="hl"><td>$80,000</td><td>Conservative</td><td class="num">23.4%</td><td class="num">30.2%</td></tr>
+      <tr><td>$56,000</td><td>Evidence Floor (Latimer et al. 2017)</td><td class="num">33.5%</td><td class="num">43.1%</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">The three tracks are never blended. Sources and trace status for each are in the Citations &amp; Evidence Addendum.</p>
 
-  <!-- ============ START ============ -->
-  <div class="view active" id="view-start">
-    <div class="panel">
-      <div class="demo-tag">MEMBER CREATION</div>
-      <h2 style="margin-top:6px;">Create your member profile</h2>
-      <p class="lede">Exit without shame. Return without judgment. The same warmth as the first day.</p><p class="lede">This takes about 15 minutes. Contact details are <strong>optional</strong>: add them if you want a worker to reach you, or continue without them and use the results on your own. Your postal code (first three characters) helps point the lists toward services near you.</p>
-      <div class="mgrid">
-        <div class="field">
-          <label class="flabel" for="mName">Name you go by</label>
-          <input type="text" id="mName" autocomplete="given-name" placeholder="e.g. Neil">
-        </div>
-        <div class="field">
-          <label class="flabel" for="mPostal">Postal code</label>
-          <input type="text" id="mPostal" maxlength="7" autocomplete="postal-code" placeholder="e.g. L3Y 4W1">
-          <div class="fnote" id="mPostalNote">The first three characters are enough. Used to find clinicians near you.</div>
-        </div>
-        <div class="field">
-          <label class="flabel" for="mPhone">Phone number</label>
-          <input type="tel" id="mPhone" autocomplete="tel" placeholder="e.g. 905 555 0142">
-          <div class="fnote" id="mPhoneNote"></div>
-        </div>
-        <div class="field">
-          <label class="flabel" for="mEmail">Email</label>
-          <input type="email" id="mEmail" autocomplete="email" placeholder="e.g. you@example.com">
-          <div class="fnote" id="mEmailNote">Optional. Add a phone or an email only if you want someone to reach you.</div>
-        </div>
-        <div class="field">
-          <span class="flabel">How should we reach you?</span>
-          <div class="radio-row">
-            <label><input type="radio" name="mPrefer" value="call" checked> Call</label>
-            <label><input type="radio" name="mPrefer" value="text"> Text</label>
-            <label><input type="radio" name="mPrefer" value="email"> Email</label>
-          </div>
-        </div>
-        <div class="field">
-          <span class="flabel">Is it safe to leave a message?</span>
-          <div class="radio-row">
-            <label><input type="radio" name="mSafeMsg" value="yes" checked> Yes</label>
-            <label><input type="radio" name="mSafeMsg" value="no"> No</label>
-            <label><input type="radio" name="mSafeMsg" value="unsure"> Not sure</label>
-          </div>
-        </div>
-        <div class="field">
-          <label class="flabel" for="mTime">Best time to reach you</label>
-          <select id="mTime">
-            <option value="any">Any time</option>
-            <option value="morning">Mornings</option>
-            <option value="afternoon">Afternoons</option>
-            <option value="evening">Evenings</option>
-          </select>
-        </div>
-      </div>
-      <label class="consent-row">
-        <input type="checkbox" id="mConsentContact">
-        <span>RWOB may contact me using the details above, in the way I've said.</span>
-      </label>
-      <div class="demo-box">
-        <div class="demo-tag">PROTOTYPE — HOW YOUR DETAILS ARE HANDLED</div>
-        <p class="fhint" style="margin:0;">Nothing you type here is saved or sent anywhere — it stays in this browser tab and is gone when you close it. Use made-up details if you like. At the end, the system shows the emails it <em>would</em> generate; a real version needs a privacy and consent review first.</p>
-      </div>
-      <div class="disclosure"><strong>What this is:</strong> a prototype navigation layer built on top of RWOB's existing intake script. It detects, flags and suggests — it does not diagnose or treat. The targeted screens are validated public instruments used as intended. The check-in and the HALO-WBBRY colour key are HALO's own design and have not yet been clinically reviewed.</div>
-      <div class="form-error" id="mFormError" role="alert"></div>
-      <div class="btn-row"><button class="btn btn-primary" onclick="createMember(false)">Create profile and begin</button><button class="btn btn-secondary" onclick="createMember(true)">Continue without contact details</button></div>
+  <div class="stats" style="margin-top:28px;margin-bottom:0">
+    <div class="stat"><div class="n">7.28</div><div class="t">LRP net return (Marcus)</div><div class="f">ΔCost $76,500 ÷ $9,238 = 8.28 gross; payback 44 days</div></div>
+    <div class="stat"><div class="n">$765K</div><div class="t">LRP 10-year value</div><div class="f">$76,500 × 10, with no ripple factor</div></div>
+    <div class="stat"><div class="n">$33,000</div><div class="t">Earthworks wage per year</div><div class="f">6 h × 5 d × 50 wk × $22</div></div>
+  </div>
+</div></section>
+
+<section id="documents"><div class="wrap">
+  <div class="eyebrow">Documents</div>
+  <h2>Everything in the repository</h2>
+  <p class="lede">PDFs open in the browser. Word and Excel files download.</p>
+  <div class="docs">
+    <div class="doc start">
+      <div class="tag">01 · Start here</div>
+      <h3>Institutional Dossier: 24 One-Pagers</h3>
+      <p>Follows Marcus from the worker conversation through the Choice Point, Path B and every MASH gear, then into Earthworks and the numbers.</p>
+      <div class="links"><a href="GSRT_Institutional_Dossier_24_One-Pagers.pdf">PDF</a></div>
+    </div>
+    <div class="doc">
+      <div class="tag">02 · MASH</div>
+      <h3>MASH Antifragile Locked Specification</h3>
+      <p>Who it's for, the site, the 3-month pathway, daily rhythm, graduation, the app, G.A.P.S. firmware, safeguards, measurement, costs and open decisions.</p>
+      <div class="links"><a href="MASH%20Antifragile%20Locked%20Specification.pdf">PDF</a><a href="MASH%20Antifragile%20Locked%20Specification.docx">Word</a></div>
+    </div>
+    <div class="doc">
+      <div class="tag">03 · Evidence</div>
+      <h3>Citations &amp; Evidence Addendum</h3>
+      <p>The source trail for every figure: what was traced, what wasn't, and what changed.</p>
+      <div class="links"><a href="GSRT_Citations_Evidence_Addendum.pdf">PDF</a><a href="GSRT_Citations_Evidence_Addendum.docx">Word</a></div>
+    </div>
+    <div class="doc">
+      <div class="tag">04 · LRP</div>
+      <h3>LRP ROI Workbook (audited)</h3>
+      <p>Life Recovery Pathway return model. Every input is editable, so you can test it with your own numbers.</p>
+      <div class="links"><a href="LRP_Marcus_ROI_Workbook_AUDITED.xlsx">Excel</a></div>
+    </div>
+    <div class="doc">
+      <div class="tag">05 · RWOB intake</div>
+      <h3>Merged Intake Prototype</h3>
+      <p>Member profile (contact optional), safety gate, RAFT, validated screens, 26-item check-in, HALO-WBBRY result and service matches. A demo that stores nothing and contacts no one.</p>
+      <div class="links"><a href="RWOB_Intake_MERGED.html">Open demo</a></div>
+    </div>
+    <div class="doc">
+      <div class="tag">05 · RWOB tools</div>
+      <h3>Outreach Tracker &amp; Sexton Manual</h3>
+      <p>Outreach colour-match tracker (V2.2) and the treatment-pathway master manual (v2), using the HALO-WBBRY colour key.</p>
+      <div class="links"><a href="RWOB_Outreach_ColourMatch_Tracking_V2_2.docx">Tracker</a><a href="TREATMENT_PATHWAY_MASTER_SEXTON_MANUAL_v2.docx">Manual</a></div>
     </div>
   </div>
+  <p class="note">What was corrected from earlier versions, and why: <a href="CHANGES.md">CHANGES.md</a></p>
+</div></section>
 
-  <!-- ============ SAFETY GATE ============ -->
-  <div class="view" id="view-safety">
-    <div class="panel">
-      <h2>Safety check</h2>
-      <p class="lede">These questions come first, before anything else. Answer honestly — a "yes" here connects you to immediate help, not a judgment.</p>
-      <div id="safetyItems"></div>
-      <div class="btn-row"><button class="btn btn-secondary" onclick="goTo('start')">Back</button><button class="btn btn-primary" onclick="submitSafety()">Continue</button></div>
-    </div>
-  </div>
+<section id="open"><div class="wrap">
+  <div class="eyebrow">Honest gaps</div>
+  <h2>Still open</h2>
+  <p class="lede">These must be settled before a costed proposal goes to a funder.</p>
+  <ul class="open">
+    <li><b>Operator.</b> A non-profit, co-op or Nation-run entity to run the camp, with the G.A.P.S. IP licensed to it.</li>
+    <li><b>Site and medical partner.</b> Crown land near Cobalt / Coleman Township, or an alternative; a mobile team or RAAM clinic.</li>
+    <li><b>Year 1 Controllers.</b> 40 hired peer workers at about $45K would take about $1.8M of the $2.25M Operations stream.</li>
+    <li><b>User Area.</b> Supervised consumption needs a Health Canada s. 56.1 exemption.</li>
+    <li><b>Earthworks capacity.</b> 200 jobs against about 600 graduates a year.</li>
+    <li><b>Naming and mapping.</b> Block 10 has no name and Block 4 has two; the G.A.P.S. mapping differs between documents.</li>
+    <li><b>Retreat map.</b> The week-by-week 3-Day Get-A-Way map for the 13-week stay, and the DEEDSPROOF module fixes.</li>
+    <li><b>Mathematics Manual.</b> Being corrected; it will be added once fixed.</li>
+  </ul>
+</div></section>
 
-  <!-- ============ CRISIS INTERRUPT ============ -->
-  <div class="view" id="view-crisis">
-    <div class="crisis-screen">
-      <h2>Let's get you connected right now</h2>
-      <p>What you shared matters, and it means the next step is a conversation with a person, not more questions. You don't have to say anything you're not ready to.</p>
-      <div class="crisis-box">
-        <div class="line"><strong>Canada —</strong> Call or text 988 (Suicide Crisis Helpline), or text CONNECT to 686868</div>
-        <div class="line"><strong>United States —</strong> Call or text 988, or text HOME to 741741</div>
-        <div class="line"><strong>International —</strong> findahelpline.com</div>
-        <div class="line"><strong>Emergency —</strong> 911, or go to your nearest emergency department</div>
-      </div>
-      <p id="edResourceLine"><strong>Eating disorder support (Canada):</strong> NEDIC — 1-866-633-4220</p>
-      <div id="crisisPipeline"></div>
-      <p style="font-size:13px;"><strong>This prototype cannot contact anyone.</strong> In the full version, a worker would follow up with you. For now, please use the numbers above. You can close this page at any time.</p>
-      <div class="btn-row"><button class="btn btn-secondary" onclick="continueAfterCrisis()">I've seen these and I'm safe right now — continue the intake</button></div>
-    </div>
-  </div>
-
-  <!-- ============ RAFT ============ -->
-  <div class="view" id="view-raft">
-    <div class="panel">
-      <h2>RAFT — a quick practical snapshot</h2>
-      <p class="lede">Four quick questions about right now, before anything else.</p>
-
-      <div class="field">
-        <label class="flabel">R — Do you have a roof tonight?</label>
-        <div class="yn-row">
-          <label><input type="radio" name="raftRoof" value="yes"><span class="chip">Yes</span></label>
-          <label><input type="radio" name="raftRoof" value="no"><span class="chip">No</span></label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="flabel">A — Any urgent medical or withdrawal concern right now?</label>
-        <div class="fhint">Choose whichever is closest — this only opens follow-up questions, it isn't a diagnosis.</div>
-        <select id="raftAddiction">
-          <option value="none">None</option>
-          <option value="opioids">Opioids</option>
-          <option value="alcohol">Alcohol</option>
-          <option value="stimulants">Stimulants</option>
-          <option value="poly">More than one substance</option>
-          <option value="unsure">Not sure</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label class="flabel">F — Fundamentals needed right now</label>
-        <div class="fhint">Select anything that applies.</div>
-        <div class="chk-grid">
-          <label><input type="checkbox" value="food" class="raftF"> Food</label>
-          <label><input type="checkbox" value="water" class="raftF"> Water</label>
-          <label><input type="checkbox" value="meds" class="raftF"> Medication</label>
-          <label><input type="checkbox" value="shower" class="raftF"> Shower</label>
-          <label><input type="checkbox" value="warmth" class="raftF"> Warmth</label>
-          <label><input type="checkbox" value="transport" class="raftF"> Transport</label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="flabel">T — In your own words, what do you need most right now?</label>
-        <textarea id="raftTarget" placeholder="Whatever comes to mind..."></textarea>
-      </div>
-
-      <div class="field">
-        <label class="flabel">Does any of this apply to you right now? <span class="optional-tag">Optional, helps route follow-up questions</span></label>
-        <div class="chk-grid">
-          <label><input type="checkbox" value="eating" class="raftFlag"> Eating has felt out of control, or I've been avoiding food</label>
-          <label><input type="checkbox" value="gambling" class="raftFlag"> Gambling or a similar compulsive behaviour</label>
-          <label><input type="checkbox" value="mood" class="raftFlag"> Low mood, anxiety, or a past difficult/frightening experience</label>
-          <label><input type="checkbox" value="sexual" class="raftFlag"> A compulsive sexual or pornography-use pattern</label>
-        </div>
-      </div>
-
-      <div class="btn-row"><button class="btn btn-secondary" onclick="goTo('safety')">Back</button><button class="btn btn-primary" onclick="submitRAFT()">Continue</button></div>
-    </div>
-  </div>
-
-  <!-- ============ SCREENING ============ -->
-  <div class="view" id="view-screening">
-    <div class="panel">
-      <h2>A few more targeted questions</h2>
-      <p class="lede" id="screeningLede">Based on what you shared, a few short validated screens open below. None of these diagnose — they help a worker understand what to prioritize.</p>
-      <div id="screeningBody"></div>
-      <div class="btn-row"><button class="btn btn-secondary" onclick="goTo('raft')">Back</button><button class="btn btn-primary" onclick="submitScreening()">Continue</button></div>
-    </div>
-  </div>
-
-  <!-- ============ CHECK-IN ============ -->
-  <div class="view" id="view-checkin">
-    <div class="panel">
-      <h2>Where do you want to go and be?</h2>
-      <p class="lede">Before anything is suggested to you, this is your call. There's no wrong answer.</p>
-      <div class="field"><textarea id="hcsText" placeholder="In your own words — what would things look like if they were better?"></textarea></div>
-    </div>
-    <div class="panel">
-      <h2>Recovery check-in</h2>
-      <p class="lede">26 short statements about the past two weeks. There are no right or wrong answers, and you are the expert on your own life. All sections need an answer before your colour profile can be made.</p>
-      <div class="q-progress"><div class="q-progress-bar"><div class="q-progress-fill" id="q-progress-fill" style="width:0%"></div></div><div class="q-progress-text" id="q-progress-text">0 / 26</div></div>
-      <div id="q-sections"></div>
-      <div class="form-error" id="checkinError" role="alert"></div>
-    </div>
-    <div class="btn-row"><button class="btn btn-secondary" onclick="goTo('screening')">Back</button><button class="btn btn-primary" onclick="submitCheckin()">See my results</button></div>
-  </div>
-
-  <!-- ============ RESULTS ============ -->
-  <div class="view" id="view-results">
-    <div class="panel">
-      <div class="demo-tag">YOUR COLOUR PROFILE</div>
-      <div id="results-content" style="margin-top:8px;"></div>
-    </div>
-    <div class="panel" id="raftSummaryPanel">
-      <h2>What you told us</h2>
-      <div id="raftSummaryBody" style="font-size:13.5px;color:var(--ink-secondary);line-height:1.7;"></div>
-    </div>
-    <div class="panel match-section">
-      <div class="demo-tag">SERVICES THAT OFFER THIS KIND OF SUPPORT</div>
-      <h3 style="margin-top:8px;">Services that offer this kind of support</h3>
-      <div id="orgMatches"></div>
-    </div>
-    <div class="panel match-section">
-      <div class="demo-tag">CLINICIAN LAYER (PRACTICUM DEMO)</div>
-      <h3 style="margin-top:8px;">Clinicians whose ways of working fit your answers</h3>
-      <p class="lede">Fictional demo clinicians only. Ranked by how well their ways of working fit your answers (55%), how close they are to your postal code (35%) and colour match (10%). Every match shows what it was matched on, so a worker can check it.</p>
-      <div id="clinicianChoices"></div>
-    </div>
-    <div class="panel match-section">
-      <div class="demo-tag">WORKER REVIEW → MEMBER CHOICE</div>
-      <h3 style="margin-top:8px;">Your choice, and what happens with it</h3>
-      <p class="lede">Nothing above is final until you say so. Check the service(s) and/or clinician(s) you actually want to move forward with, then generate the notification preview.</p>
-      <label class="consent-row"><input type="checkbox" id="shareConsent"><span>I agree that my answers and the contact preferences I gave can be shared with Recovery Without Borders and the clinician(s) I've checked, so I don't have to repeat my story.</span></label>
-      <div class="btn-row"><button class="btn btn-primary" onclick="renderEmailPreviews()">Generate notifications for my selected choice(s) (demo)</button></div>
-      <div id="emailPreviews" style="margin-top:14px;"></div>
-    </div>
-    <div class="panel">
-      <details>
-        <summary style="cursor:pointer;font-weight:700;">Full directory (74 sample organizations)</summary>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin:12px 0;">
-          <label class="flabel" style="margin:0;">Colour <select id="dirColour" onchange="renderDirectory()"><option value="all">All</option><option>RED</option><option>BLUE</option><option>YELLOW</option><option>WHITE</option><option>BLACK</option></select></label>
-          <label class="flabel" style="margin:0;">Category <select id="dirCat" onchange="renderDirectory()"><option value="all">All</option><option value="substance">Substance use</option><option value="behavioural">Behavioural / eating</option><option value="housing">Housing / shelter</option><option value="crisis">Crisis / navigation</option></select></label>
-          <label class="flabel" style="margin:0;"><input type="checkbox" id="dirNear" onchange="renderDirectory()"> Near my postal code</label>
-        </div>
-        <p class="fhint" id="dirNote"></p>
-        <div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;font-size:12.5px;"><thead><tr style="text-align:left;"><th style="padding:6px;">Organization</th><th style="padding:6px;">Region</th><th style="padding:6px;">Category</th><th style="padding:6px;">Colours</th><th style="padding:6px;">Funding</th><th style="padding:6px;">Duration</th></tr></thead><tbody id="dir-tbody"></tbody></table></div>
-        <p class="fhint">Gathered from public websites to show the idea. Organizations have not confirmed their details or colours, or agreed to be listed. Call before referring anyone.</p>
-      </details>
-      <details style="margin-top:12px;">
-        <summary style="cursor:pointer;font-weight:700;">How the HALO-WBBRY colours work</summary>
-        <div style="font-size:13px;color:var(--ink-secondary);line-height:1.6;margin-top:10px;">
-          <p><strong>WHITE — Foundation:</strong> steadiness, orientation, clear thinking. Navigation, housing first steps, harm reduction, primary care.</p>
-          <p><strong>BLUE — Health &amp; Depth:</strong> connection, trust, grief. Counselling, outpatient, family therapy, concurrent-disorder care.</p>
-          <p><strong>YELLOW — Reactivity &amp; Response:</strong> stress reactions, cravings, urges. Withdrawal management, RAAM clinics, crisis support.</p>
-          <p><strong>BLACK — Shadow &amp; Transformation:</strong> loss of enjoyment, identity, trauma. Residential, intensive and trauma treatment.</p>
-          <p><strong>RED — Emergency &amp; Crisis:</strong> immediate safety. 24/7 lines, mobile crisis, emergency stabilization.</p>
-          <p style="margin-top:10px;"><em>What this is, plainly:</em> HALO-WBBRY is HALO's own sorting key, inspired by the NFPA 704 hazard-diamond colours. It is not a diagnosis, not a measure of brain chemistry, and not part of or endorsed by any government safety system, including WHMIS.</p>
-        </div>
-      </details>
-    </div>
-    <div class="btn-row"><button class="btn btn-secondary" onclick="location.reload()">Start over</button></div>
-  </div>
-
-</div>
-
+<footer><div class="wrap">
+  <div class="crisis">In Canada, call or text <b>9-8-8</b> (Suicide Crisis Helpline, 24/7). In an emergency, call <b>9-1-1</b>.</div>
+  <p>© 2026 Neil J. Schwab · HALO Antifragile AI. All rights reserved. G.A.P.S., HALO-WBBRY, DEEDSPROOF and Fish Bowl Method™ are working names; none is a registered mark.</p>
+</div></footer>
 
 <script>
-const ORGS = [
-  // DOC 1: SUBSTANCE USE — Northern Ontario
-  {n:'Benbowopka Treatment Centre',r:'Northern Ontario',c:'substance',colours:['BLUE','BLACK'],f:'OHIP',d:'4–6 weeks residential',note:'First Nations, Inuit, Métis focused'},
-  {n:'Camillus Centre — St. Joseph\'s',r:'Northern Ontario',c:'substance',colours:['BLUE','BLACK'],f:'OHIP',d:'3–7 days detox + residential',note:'On-site medical monitoring'},
-  {n:'Maison Renaissance',r:'Northern Ontario',c:'substance',colours:['BLUE','BLACK'],f:'OHIP',d:'28 days residential',note:'Francophone inpatient'},
-  {n:'Monarch Recovery (Sudbury)',r:'Northern Ontario',c:'substance',colours:['BLUE','WHITE','BLACK'],f:'OHIP',d:'28–90 days residential',note:'Gender-specific programs'},
-  {n:'De-da-da-na-da-sani Treatment',r:'Northern Ontario',c:'substance',colours:['BLUE','BLACK'],f:'Indigenous Services',d:'6 weeks residential',note:'First Nations land-based healing'},
-  {n:'Living Space (Timmins)',r:'Northern Ontario',c:'housing',colours:['WHITE','BLACK'],f:'Government',d:'Emergency + transitional',note:'Emergency shelter & supportive housing'},
-
-  // DOC 1: SUBSTANCE USE — GTA & Central
-  {n:'ASCO — Addiction Services Central Ontario',r:'Central Ontario & GTA',c:'substance',colours:['RED','BLUE','YELLOW','BLACK'],f:'OHIP',d:'3–7 days detox / RAAM',note:'Highest acuity medical asset, walk-in RAAM'},
-  {n:'EHN Bellwood Toronto',r:'Central Ontario & GTA',c:'substance',colours:['BLUE','YELLOW','BLACK'],f:'Private',d:'5–7 days detox + 35 days residential',note:'Rapid private placement backup'},
-  {n:'Renascent (Graham Munro / Paul J. Sullivan)',r:'Central Ontario & GTA',c:'substance',colours:['BLUE','BLACK'],f:'OHIP / Ministry',d:'28 days residential',note:'12-Step recovery model'},
-  {n:'CAMH — Centre for Addiction & Mental Health',r:'Central Ontario & GTA',c:'substance',colours:['BLUE','YELLOW','WHITE','BLACK'],f:'OHIP',d:'Variable',note:'Provincial hub, research, concurrent disorders'},
-  {n:'CAMH Rainbow Services',r:'Central Ontario & GTA',c:'substance',colours:['BLUE','WHITE'],f:'OHIP',d:'Outpatient',note:'2SLGBTQ2S+-affirming care'},
-  {n:'Rainbow Health Ontario',r:'Central Ontario & GTA',c:'substance',colours:['BLUE','WHITE'],f:'Government',d:'Navigation',note:'2SLGBTQ2S+ health navigation'},
-  {n:'Sherbourne Health',r:'Central Ontario & GTA',c:'substance',colours:['BLUE','WHITE'],f:'OHIP',d:'Outpatient',note:'Marginalized communities, harm reduction'},
-  {n:'Canadian Centre for Addictions',r:'Central Ontario & GTA',c:'substance',colours:['BLUE','YELLOW','BLACK'],f:'Private',d:'30–90 days residential',note:'Private evidence-based treatment'},
-  {n:'Ontario Shores',r:'Central Ontario & GTA',c:'substance',colours:['BLUE','BLACK'],f:'OHIP',d:'Inpatient psychiatric + residential',note:'Complex mental health & addiction'},
-  {n:'NEDIC — National Eating Disorder Info Centre',r:'Central Ontario & GTA',c:'behavioural',colours:['YELLOW','WHITE'],f:'Free',d:'Helpline/navigation',note:'Eating disorder information & referral'},
-  {n:'OFIFC — Ontario Federation of Indigenous Friendship Centres',r:'Central Ontario & GTA',c:'substance',colours:['BLUE','WHITE'],f:'Indigenous Services',d:'Navigation',note:'Indigenous friendship & cultural programs'},
-  {n:'Pine River Institute',r:'Central Ontario & GTA',c:'substance',colours:['BLUE','BLACK'],f:'Private / Subsidized',d:'12+ months residential',note:'Youth 13–19, outdoor-based therapeutic'},
-  {n:'Kinark Child and Family Services',r:'Central Ontario & GTA',c:'substance',colours:['BLUE','WHITE'],f:'Government',d:'Variable',note:'Children and youth mental health'},
-  {n:'Trafalgar Addiction Treatment',r:'Central Ontario & GTA',c:'substance',colours:['BLUE','BLACK'],f:'Private',d:'35–45 days residential',note:'BLUE+BLACK blend, concurrent mental health'},
-  {n:'ConnexOntario',r:'Province-wide',c:'crisis',colours:['WHITE'],f:'Government',d:'24/7 helpline',note:'System navigation, waitlist, referral'},
-  {n:'Health811',r:'Province-wide',c:'crisis',colours:['WHITE'],f:'OHIP',d:'24/7 telephone',note:'Nurse-led health information'},
-  {n:'CFHH — Canadian Foundation for Healthcare Improvement',r:'Province-wide',c:'crisis',colours:['WHITE'],f:'Government',d:'Navigation',note:'Quality improvement & system design'},
-
-  // DOC 1: SUBSTANCE USE — Eastern Ontario
-  {n:'Ottawa Booth Centre (Salvation Army)',r:'Eastern Ontario',c:'substance',colours:['RED','BLUE','WHITE','BLACK'],f:'Municipal / OHIP',d:'30 days emergency + residential',note:'Low-barrier emergency + Anchorage program'},
-  {n:'Serenity House (Ottawa)',r:'Eastern Ontario',c:'substance',colours:['BLUE','BLACK'],f:'OHIP',d:'12 weeks intensive residential',note:'High-success step-down for men'},
-  {n:'Cornerstone Housing for Women',r:'Eastern Ontario',c:'housing',colours:['WHITE','BLACK'],f:'Government',d:'Emergency + transitional',note:'Women\'s shelter & transitional housing'},
-  {n:'Maplewoods Treatment',r:'Eastern Ontario',c:'substance',colours:['BLUE','BLACK'],f:'OHIP',d:'28 days residential',note:'Bilingual residential treatment'},
-
-  // DOC 1: SUBSTANCE USE — Western Ontario & Niagara
-  {n:'Homewood Health Centre (Addiction Medicine)',r:'West-Central Ontario',c:'substance',colours:['BLUE','YELLOW','BLACK'],f:'OHIP / Private',d:'4–8 weeks inpatient',note:'Comprehensive medical, dual-track funding'},
-  {n:'Teen Challenge Canada (Ontario Men\'s)',r:'West-Central Ontario',c:'substance',colours:['BLACK'],f:'Private / Low-cost',d:'12 months residential',note:'Long-term faith-based men\'s recovery'},
-  {n:'New Port Centre (Niagara Health)',r:'West-Central Ontario',c:'substance',colours:['BLUE','BLACK'],f:'OHIP',d:'21 days primary rehab',note:'Hospital-operated 35-bed facility'},
-  {n:'Twelve Mile Recovery',r:'West-Central Ontario',c:'substance',colours:['BLUE','YELLOW','BLACK'],f:'Private',d:'4–6 weeks residential',note:'Small private, high personalization'},
-  {n:'Indwell Community Homes',r:'West-Central Ontario',c:'housing',colours:['WHITE','BLACK'],f:'Government',d:'Permanent supportive',note:'Affordable housing with mental health support'},
-  {n:'Southridge Shelter (Hamilton)',r:'West-Central Ontario',c:'housing',colours:['WHITE','BLACK'],f:'Municipal',d:'Emergency',note:'Emergency shelter services'},
-
-  // DOC 1: Southwestern
-  {n:'Westover Treatment Centre',r:'Southwestern Ontario',c:'substance',colours:['BLUE','BLACK'],f:'Private / Insurance',d:'28–42 days residential',note:'Private residential near Thamesville'},
-  {n:'Brentwood Recovery Home',r:'Southwestern Ontario',c:'substance',colours:['BLUE','BLACK'],f:'Low-cost',d:'90 days minimum residential',note:'Long-term men\'s recovery'},
-  {n:'Salvation Army ARC (London)',r:'Southwestern Ontario',c:'substance',colours:['WHITE','BLACK'],f:'Free',d:'6 months residential',note:'Work-therapy residential model'},
-  {n:'Mission Services (London)',r:'Southwestern Ontario',c:'housing',colours:['WHITE','BLACK'],f:'Community',d:'Emergency + transitional',note:'Shelter and addiction recovery'},
-  {n:'St. Leonard\'s Community Services',r:'Southwestern Ontario',c:'substance',colours:['BLUE','BLACK'],f:'Government',d:'Residential + community',note:'Reintegration and recovery support'},
-
-  // DOC 2: BEHAVIORAL / EATING DISORDERS
-  {n:'S.L.A.A. Ontario Intergroup',r:'Province-wide',c:'behavioural',colours:['BLUE','YELLOW'],f:'Free (Peer)',d:'Ongoing meetings',note:'Sex and love addiction peer support'},
-  {n:'CAMH — Problem Gambling Services',r:'Central Ontario & GTA',c:'behavioural',colours:['BLUE','YELLOW','WHITE'],f:'OHIP',d:'8–16 weeks outpatient',note:'Province-wide gambling clinical program'},
-  {n:'Sheena\'s Place',r:'Central Ontario & GTA',c:'behavioural',colours:['YELLOW','WHITE'],f:'Free',d:'8–10 week seasonal groups',note:'Low-barrier eating disorder community support'},
-  {n:'Homewood — Eating Disorders Program',r:'West-Central Ontario',c:'behavioural',colours:['BLUE','YELLOW','BLACK'],f:'OHIP / Private',d:'8–16 weeks inpatient',note:'Specialized residential eating disorders'},
-  {n:'Toronto General Hospital — Eating Disorder',r:'Central Ontario & GTA',c:'behavioural',colours:['BLUE','YELLOW','BLACK'],f:'OHIP',d:'4–12 weeks inpatient + day',note:'Hospital-based eating disorder specialty'},
-  {n:'Toronto Art Therapy Institute',r:'Central Ontario & GTA',c:'behavioural',colours:['BLUE','WHITE'],f:'Sliding scale',d:'Variable',note:'Expressive/art-based therapy'},
-  {n:'Behaviour Matters',r:'Central Ontario & GTA',c:'behavioural',colours:['BLUE','WHITE'],f:'Private / Insurance',d:'Variable',note:'Children & adolescent behavioural therapy'},
-
-  // DOC 3: HOUSING / SHELTERS
-  {n:'Blue Door Shelters (York Region)',r:'Central Ontario & GTA',c:'housing',colours:['WHITE','BLACK'],f:'Municipal',d:'Emergency + transitional',note:'Family and individual emergency shelter'},
-  {n:'Alpha House (Toronto)',r:'Central Ontario & GTA',c:'housing',colours:['WHITE','BLACK'],f:'Municipal',d:'Emergency',note:'Women\'s emergency shelter'},
-  {n:'360°kids',r:'Central Ontario & GTA',c:'housing',colours:['WHITE','BLUE'],f:'Government',d:'Emergency + supportive',note:'Youth 16–26, 2SLGBTQ+ youth'},
-  {n:'Monarch Recovery (Barrie)',r:'Central Ontario & GTA',c:'housing',colours:['WHITE','BLUE','BLACK'],f:'Government',d:'Supportive transitional',note:'Post-treatment transitional housing'},
-
-  // DOC 4: CRISIS / NAVIGATION
-  {n:'Distress Centre (Toronto)',r:'Central Ontario & GTA',c:'crisis',colours:['RED','WHITE'],f:'Free',d:'24/7',note:'Crisis counselling & distress line'},
-  {n:'Krasman Centre',r:'Central Ontario & GTA',c:'crisis',colours:['WHITE','BLUE'],f:'Peer',d:'Drop-in + warm line',note:'Peer support & crisis alternative'},
-  {n:'YSSN 310-COPE',r:'Central Ontario & GTA',c:'crisis',colours:['WHITE'],f:'Free',d:'24/7 helpline',note:'Youth mental health crisis line'},
-  {n:'Sandgate Women\'s Shelter',r:'Central Ontario & GTA',c:'crisis',colours:['RED','WHITE'],f:'Government',d:'24/7 crisis',note:'Domestic violence crisis shelter'},
-  {n:'Victim Services Toronto',r:'Central Ontario & GTA',c:'crisis',colours:['RED','WHITE'],f:'Government',d:'Immediate response',note:'Crime victim crisis support'},
-  {n:'Good2Talk (Post-Secondary)',r:'Province-wide',c:'crisis',colours:['WHITE','BLUE'],f:'Free',d:'24/7',note:'Student mental health & crisis helpline'},
-  {n:'9-8-8 Suicide Crisis Helpline (call or text 988)',r:'Province-wide',c:'crisis',colours:['RED'],f:'Free',d:'24/7',note:'National suicide crisis helpline'},
-  {n:'Kids Help Phone',r:'Province-wide',c:'crisis',colours:['WHITE','BLUE'],f:'Free',d:'24/7',note:'Youth counselling & crisis support'},
-  {n:'Telehealth Ontario',r:'Province-wide',c:'crisis',colours:['WHITE'],f:'OHIP',d:'24/7',note:'Nurse-led telephone health advisory'},
-  {n:'Cedar Centre',r:'Central Ontario & GTA',c:'crisis',colours:['BLUE','WHITE'],f:'Government',d:'Variable',note:'Children, teens & non-offending caregivers'},
-
-  // Additional facilities
-  {n:'Dave Smith Youth Treatment Centre',r:'Eastern Ontario',c:'substance',colours:['BLUE','BLACK'],f:'OHIP',d:'6 weeks residential',note:'Youth residential addiction treatment'},
-  {n:'Portage Ontario',r:'Eastern Ontario',c:'substance',colours:['BLUE','BLACK'],f:'OHIP / Government',d:'4–6 months residential',note:'Therapeutic community model'},
-  {n:'Jean Tweed Centre',r:'Central Ontario & GTA',c:'substance',colours:['BLUE','BLACK'],f:'OHIP',d:'21 days residential',note:'Women-focused addiction treatment'},
-  {n:'Cedarcroft Place (St. Thomas)',r:'Southwestern Ontario',c:'substance',colours:['BLUE','BLACK'],f:'OHIP',d:'28 days residential',note:'Rural residential treatment'},
-  {n:'Willowgrove — Muskoka',r:'Central Ontario & GTA',c:'substance',colours:['BLUE','BLACK'],f:'Private',d:'28–90 days residential',note:'Boutique private residential'},
-  {n:'GTA Rehab Network',r:'Central Ontario & GTA',c:'crisis',colours:['WHITE'],f:'OHIP',d:'Navigation',note:'Rehab bed coordination & referral'},
-  {n:'Waypoint Centre (Penetanguishene)',r:'Central Ontario & GTA',c:'substance',colours:['BLUE','BLACK'],f:'OHIP',d:'Inpatient',note:'Forensic & complex mental health'},
-  {n:'Royal Ottawa Mental Health',r:'Eastern Ontario',c:'substance',colours:['BLUE','BLACK'],f:'OHIP',d:'Inpatient + outpatient',note:'Mood, anxiety, substance, concurrent'},
-  {n:'St. Joseph\'s Healthcare (Hamilton)',r:'West-Central Ontario',c:'substance',colours:['BLUE','YELLOW','BLACK'],f:'OHIP',d:'Variable',note:'Concurrent disorders, forensic, RAAM'},
-  {n:'Thunderbird Partnership Foundation',r:'Province-wide',c:'substance',colours:['BLUE','WHITE'],f:'Indigenous Services',d:'Network/resource',note:'National Indigenous wellness framework'},
-  {n:'National Native Alcohol & Drug Abuse Program',r:'Province-wide',c:'substance',colours:['BLUE','BLACK'],f:'Indigenous Services',d:'Network',note:'First Nations treatment centre network'},
-  {n:'Maplehurst Correctional — CAMH Link',r:'Central Ontario & GTA',c:'substance',colours:['BLACK'],f:'Government',d:'In-custody',note:'Corrections-to-community treatment bridge'},
-  {n:'Peigan Treatment Centre',r:'Northwestern Ontario',c:'substance',colours:['BLUE','BLACK'],f:'Indigenous Services',d:'6 weeks residential',note:'Indigenous land-based healing'},
-  {n:'Dilico Anishinabek Family Care',r:'Northwestern Ontario',c:'substance',colours:['BLUE','WHITE'],f:'Indigenous Services',d:'Community-based',note:'Indigenous family wellness & addiction'},
-  {n:'Sioux Lookout Meno Ya Win Health',r:'Northwestern Ontario',c:'substance',colours:['BLUE','WHITE','BLACK'],f:'OHIP',d:'Inpatient + community',note:'Remote/fly-in community mental health & addiction'},
-];
-
-// ---- Ontario FSA centroids (GeoNames, via postalcodes-ca 0.0.8) ----
-const ON_FSA = {"K0A":["National Capital Region",45.256,-76.275],"K0B":["Prescott and Russell United Counties",45.503,-74.748],"K0C":["Stormont, Dundas and Glengarry Unite",45.169,-74.897],"K0E":["South Leeds and Grenville United Cou",44.873,-75.442],"K0G":["Rideau Lakes area",45.047,-76.476],"K0H":["Frontenac County, Addington County, ",44.721,-76.833],"K0J":["Renfrew County and Lanark Highlands ",45.661,-77.589],"K0K":["Quinte Shores, East Northumberland C",44.326,-77.432],"K0L":["Peterborough County and North Hastin",44.777,-77.969],"K0M":["Kawartha lakes and Haliburton County",44.864,-78.655],"K1A":["Government of Canada Ottawa and Gati",45.421,-75.702],"K1B":["Gloucester",45.428,-75.588],"K1C":["Gloucester",45.468,-75.54],"K1E":["Orleans",45.477,-75.505],"K1G":["Ottawa",45.355,-75.577],"K1H":["Ottawa",45.388,-75.659],"K1J":["Gloucester",45.452,-75.604],"K1K":["Ottawa",45.445,-75.643],"K1L":["Ottawa",45.44,-75.663],"K1M":["Ottawa",45.449,-75.682],"K1N":["Ottawa",45.429,-75.684],"K1P":["Ottawa",45.422,-75.703],"K1R":["Ottawa",45.412,-75.711],"K1S":["Ottawa",45.399,-75.687],"K1T":["Gloucester",45.33,-75.616],"K1V":["Ottawa",45.328,-75.672],"K1W":["Gloucester",45.437,-75.516],"K1X":["Gloucester South",45.276,-75.628],"K1Y":["Ottawa West",45.402,-75.733],"K1Z":["Ottawa",45.387,-75.74],"K2A":["Ottawa",45.38,-75.764],"K2B":["Ottawa",45.364,-75.793],"K2C":["Ottawa",45.368,-75.738],"K2E":["Nepean East",45.344,-75.716],"K2G":["Nepean",45.321,-75.739],"K2H":["Nepean",45.343,-75.826],"K2J":["Nepean",45.269,-75.752],"K2K":["Kanata",45.37,-75.92],"K2L":["Kanata",45.3,-75.924],"K2M":["Kanata",45.286,-75.856],"K2P":["Ottawa",45.417,-75.69],"K2R":["Nepean",45.29,-75.813],"K2S":["Stittsville",45.25,-75.916],"K2T":["Kanata",45.317,-75.937],"K2V":["Kanata",45.285,-75.893],"K2W":["Kanata",45.37,-75.989],"K4A":["Orleans",45.47,-75.472],"K4B":["Cumberland Township",45.41,-75.364],"K4C":["Cumberland",45.498,-75.392],"K4K":["Rockland",45.55,-75.291],"K4M":["Manotick",45.215,-75.653],"K4P":["Greely",45.243,-75.567],"K4R":["Russell",45.239,-75.353],"K6A":["Hawkesbury",45.6,-74.616],"K6H":["Cornwall East",45.056,-74.685],"K6J":["Cornwall West",45.022,-74.757],"K6K":["Cornwall North",45.061,-74.777],"K6T":["Elizabethtown",44.63,-75.745],"K6V":["Brockville",44.657,-75.715],"K7A":["Smiths Falls",44.9,-76.016],"K7C":["Carleton Place",45.133,-76.149],"K7G":["Gananoque",44.333,-76.166],"K7H":["Perth",44.9,-76.249],"K7K":["Kingston",44.257,-76.472],"K7L":["Kingston",44.295,-76.428],"K7M":["Kingston",44.241,-76.579],"K7N":["Amherstview",44.222,-76.65],"K7P":["Kingston",44.281,-76.611],"K7R":["Napanee",44.25,-76.949],"K7S":["Arnprior",45.433,-76.349],"K7V":["Renfrew",45.467,-76.683],"K8A":["Pembroke Central and northern subdiv",45.747,-77.205],"K8B":["Pembroke",45.808,-77.081],"K8H":["Petawawa",45.895,-77.28],"K8N":["Belleville East",44.173,-77.368],"K8P":["Belleville West",44.166,-77.404],"K8R":["Belleville",44.14,-77.468],"K8V":["Trenton",44.099,-77.578],"K9A":["Cobourg",43.96,-78.165],"K9H":["Peterborough North",44.325,-78.318],"K9J":["Peterborough South",44.31,-78.24],"K9K":["Peterborough",44.314,-78.361],"K9L":["Peterborough",44.355,-78.32],"K9V":["Lindsay",44.35,-78.733],"L0A":["West Northumberland County",44.126,-78.519],"L0B":["East Durham Regional Municipality",44.077,-78.746],"L0C":["West Durham Regional Municipality",44.209,-79.073],"L0E":["Lake Simcoe Southeast Shore",44.32,-79.278],"L0G":["Ontario Centre",44.059,-79.624],"L0H":["Whitby Region",43.902,-79.155],"L0J":["North Peel Regional Municipality",43.857,-79.648],"L0K":["Lake Simcoe North Shore",44.623,-79.124],"L0L":["Lake Simcoe West Shore",44.455,-79.735],"L0M":["Georgian Bay South Shore",44.327,-80.033],"L0N":["Dufferin County",44.032,-80.207],"L0P":["Halton Regional Municipality",43.491,-80.0],"L0R":["East Haldimand County",43.161,-79.746],"L0S":["Niagara Regional Municipality",42.907,-79.083],"L0V":["Westminster Abbey",45.469,-75.008],"L1A":["Port Hope",44.017,-78.4],"L1B":["Bowmanville East",43.923,-78.546],"L1C":["Bowmanville West",43.971,-78.71],"L1E":["Courtice",43.897,-78.768],"L1G":["Oshawa Central",43.923,-78.868],"L1H":["Oshawa Southeast",43.972,-78.884],"L1J":["Oshawa Southwest",43.885,-78.877],"L1K":["Oshawa East",43.925,-78.829],"L1L":["Oshawa North",43.958,-78.897],"L1M":["Whitby North",43.957,-78.978],"L1N":["Whitby Southeast",43.872,-78.927],"L1P":["Whitby Southwest",43.887,-78.975],"L1R":["Whitby Central",43.922,-78.941],"L1S":["Ajax Southwest",43.84,-79.025],"L1T":["Ajax Northwest",43.884,-79.053],"L1V":["Pickering Southwest",43.861,-79.162],"L1W":["Pickering South",43.82,-79.08],"L1X":["Pickering Central",43.856,-79.097],"L1Y":["Pickering North",43.956,-79.119],"L1Z":["Ajax East",43.877,-79.005],"L2A":["Fort Erie",42.9,-78.933],"L2E":["Niagara Falls Central",43.054,-79.102],"L2G":["Niagara Falls Southeast",43.07,-79.082],"L2H":["Niagara Falls West",43.101,-79.138],"L2J":["Niagara Falls North",43.13,-79.103],"L2M":["St. Catharines Northeast",43.196,-79.216],"L2N":["St. Catharines Northwest",43.192,-79.256],"L2P":["St. Catharines East",43.153,-79.209],"L2R":["St. Catharines Central",43.142,-79.297],"L2S":["St. Catharines Southwest",43.145,-79.263],"L2T":["St. Catharines South",43.131,-79.232],"L2V":["St. Catharines Southeast",43.114,-79.204],"L2W":["St. Catharines West",43.169,-79.279],"L3B":["Welland East",42.988,-79.222],"L3C":["Welland West",43.0,-79.266],"L3K":["Port Colborne",42.9,-79.233],"L3M":["Grimsby",43.2,-79.566],"L3P":["Markham Central",43.877,-79.269],"L3R":["Markham Outer Southwest",43.848,-79.329],"L3S":["Markham Southeast",43.849,-79.262],"L3T":["Thornhill East",43.823,-79.395],"L3V":["Orillia",44.609,-79.421],"L3X":["Newmarket Southwest",44.043,-79.491],"L3Y":["Newmarket Northeast",44.056,-79.456],"L3Z":["Bradford",44.117,-79.566],"L4A":["Stouffville",43.967,-79.25],"L4B":["Richmond Hill Southeast",43.858,-79.398],"L4C":["Richmond Hill Southwest",43.867,-79.441],"L4E":["Richmond Hill North",43.939,-79.435],"L4G":["Aurora",44.0,-79.466],"L4H":["Woodbridge North",43.843,-79.564],"L4J":["Thornhill West",43.816,-79.453],"L4K":["Concord",43.8,-79.483],"L4L":["Woodbridge South",43.806,-79.6],"L4M":["Barrie North",44.4,-79.666],"L4N":["Barrie South",44.357,-79.693],"L4P":["Keswick",44.25,-79.466],"L4R":["Midland",44.75,-79.883],"L4S":["Richmond Hill Central",43.898,-79.414],"L4T":["Mississauga",43.714,-79.643],"L4V":["Mississauga",43.694,-79.607],"L4W":["Mississauga",43.641,-79.63],"L4X":["Mississauga",43.618,-79.579],"L4Y":["Mississauga",43.603,-79.593],"L4Z":["Mississauga",43.619,-79.654],"L5A":["Mississauga",43.588,-79.609],"L5B":["Mississauga",43.577,-79.631],"L5C":["Mississauga",43.562,-79.65],"L5E":["Mississauga",43.584,-79.561],"L5G":["Mississauga",43.565,-79.585],"L5H":["Mississauga",43.542,-79.616],"L5J":["Mississauga",43.51,-79.63],"L5K":["Mississauga",43.527,-79.662],"L5L":["Mississauga",43.537,-79.69],"L5M":["Mississauga",43.564,-79.72],"L5N":["Mississauga",43.592,-79.761],"L5P":["Mississauga",43.69,-79.624],"L5R":["Mississauga",43.606,-79.671],"L5S":["Mississauga",43.68,-79.678],"L5T":["Mississauga",43.668,-79.618],"L5V":["Mississauga",43.597,-79.693],"L5W":["Mississauga",43.631,-79.715],"L6A":["Maple",43.85,-79.516],"L6B":["Markham East",43.901,-79.218],"L6C":["Markham Northwest",43.904,-79.339],"L6E":["Markham Northeast",43.9,-79.268],"L6G":["Markham Inner Southwest",43.849,-79.335],"L6H":["Oakville North",43.488,-79.71],"L6J":["Oakville Northeast",43.476,-79.659],"L6K":["Oakville East",43.44,-79.688],"L6L":["Oakville South",43.403,-79.719],"L6M":["Oakville West",43.446,-79.759],"L6P":["Brampton North",43.794,-79.702],"L6R":["Brampton Northwest",43.759,-79.76],"L6S":["Brampton North Central",43.738,-79.726],"L6T":["Brampton East",43.72,-79.685],"L6V":["Brampton Central",43.706,-79.763],"L6W":["Brampton Southeast",43.68,-79.727],"L6X":["Brampton Southwest",43.666,-79.805],"L6Y":["Brampton South",43.625,-79.788],"L6Z":["Brampton West Central",43.733,-79.795],"L7A":["Brampton West",43.691,-79.838],"L7B":["King City",43.929,-79.527],"L7C":["Caledon",43.875,-79.856],"L7E":["Bolton",43.88,-79.738],"L7G":["Georgetown",43.65,-79.916],"L7J":["Acton",43.63,-80.041],"L7K":["Caledon Village",43.86,-79.996],"L7L":["Burlington Northeast",43.38,-79.767],"L7M":["Burlington North",43.434,-79.87],"L7N":["Burlington East",43.351,-79.784],"L7P":["Burlington West",43.381,-79.886],"L7R":["Burlington Southeast",43.375,-79.843],"L7S":["Burlington South",43.323,-79.809],"L7T":["Burlington Southwest",43.308,-79.851],"L8B":["Waterdown",43.333,-79.883],"L8E":["Hamilton",43.224,-79.699],"L8G":["Hamilton",43.216,-79.742],"L8H":["Hamilton",43.26,-79.793],"L8J":["Hamilton",43.184,-79.721],"L8K":["Hamilton",43.221,-79.799],"L8L":["Hamilton",43.278,-79.834],"L8M":["Hamilton",43.244,-79.836],"L8N":["Hamilton",43.402,-80.017],"L8P":["Hamilton",43.251,-79.892],"L8R":["Hamilton",43.273,-79.879],"L8S":["Hamilton",43.261,-79.916],"L8T":["Hamilton",43.22,-79.829],"L8V":["Hamilton",43.227,-79.85],"L8W":["Hamilton",43.196,-79.846],"L9A":["Hamilton",43.227,-79.871],"L9B":["Hamilton",43.206,-79.9],"L9C":["Hamilton",43.231,-79.905],"L9E":["Milton",43.517,-79.883],"L9G":["Ancaster West",43.184,-79.99],"L9H":["Dundas",43.264,-79.952],"L9J":["Barrie",44.319,-79.676],"L9K":["Ancaster East",43.225,-79.943],"L9L":["Port Perry",44.107,-78.944],"L9M":["Penetanguishene",44.783,-79.916],"L9N":["Holland Landing",44.115,-79.501],"L9P":["Uxbridge",44.1,-79.116],"L9R":["Alliston",44.15,-79.866],"L9S":["Innisfil",44.3,-79.65],"L9T":["Milton",43.515,-79.884],"L9V":["Orangeville North",43.96,-80.108],"L9W":["Orangeville South",43.97,-80.016],"L9X":["Midhurst",44.444,-79.732],"L9Y":["Collingwood",44.483,-80.216],"L9Z":["Wasaga Beach",44.517,-80.016],"M1B":["Scarborough",43.811,-79.193],"M1C":["Scarborough",43.788,-79.156],"M1E":["Scarborough",43.768,-79.187],"M1G":["Scarborough",43.771,-79.214],"M1H":["Scarborough",43.769,-79.239],"M1J":["Scarborough",43.746,-79.232],"M1K":["Scarborough",43.73,-79.264],"M1L":["Scarborough",43.712,-79.284],"M1M":["Scarborough",43.725,-79.231],"M1N":["Scarborough",43.695,-79.265],"M1P":["Scarborough",43.761,-79.271],"M1R":["Scarborough",43.751,-79.3],"M1S":["Scarborough",43.795,-79.264],"M1T":["Scarborough",43.781,-79.304],"M1V":["Scarborough",43.818,-79.282],"M1W":["Scarborough",43.802,-79.322],"M1X":["Scarborough",43.834,-79.207],"M2H":["North York",43.801,-79.358],"M2J":["North York",43.78,-79.348],"M2K":["North York",43.78,-79.381],"M2L":["North York",43.755,-79.376],"M2M":["Willowdale East",43.791,-79.41],"M2N":["Willowdale South",43.767,-79.411],"M2P":["North York",43.75,-79.398],"M2R":["Willowdale West",43.779,-79.445],"M3A":["North York",43.755,-79.33],"M3B":["Don Mills North",43.745,-79.359],"M3C":["Don Mills South",43.733,-79.333],"M3H":["North York",43.754,-79.447],"M3J":["North York",43.769,-79.492],"M3K":["Downsview East",43.739,-79.469],"M3L":["Downsview West",43.733,-79.512],"M3M":["Downsview Central",43.732,-79.493],"M3N":["North York",43.757,-79.521],"M4A":["North York",43.728,-79.315],"M4B":["East York",43.706,-79.309],"M4C":["East York",43.691,-79.312],"M4E":["East Toronto",43.678,-79.294],"M4G":["East York",43.712,-79.364],"M4H":["East York",43.706,-79.346],"M4J":["East Toronto",43.687,-79.337],"M4K":["East Toronto",43.68,-79.354],"M4L":["East Toronto",43.669,-79.316],"M4M":["East Toronto",43.656,-79.341],"M4N":["Central Toronto",43.73,-79.394],"M4P":["Central Toronto",43.714,-79.389],"M4R":["Central Toronto",43.714,-79.406],"M4S":["Central Toronto",43.702,-79.385],"M4T":["Central Toronto",43.69,-79.385],"M4V":["Central Toronto",43.686,-79.403],"M4W":["Downtown Toronto",43.683,-79.373],"M4X":["Downtown Toronto",43.668,-79.369],"M4Y":["Downtown Toronto",43.666,-79.383],"M5A":["Downtown Toronto",43.656,-79.363],"M5B":["Downtown Toronto",43.657,-79.378],"M5C":["Downtown Toronto",43.651,-79.376],"M5E":["Downtown Toronto",43.646,-79.375],"M5G":["Downtown Toronto",43.656,-79.386],"M5H":["Downtown Toronto",43.65,-79.383],"M5J":["Downtown Toronto",43.623,-79.394],"M5K":["Downtown Toronto",43.647,-79.382],"M5L":["Downtown Toronto",43.649,-79.382],"M5M":["North York",43.733,-79.418],"M5N":["Central Toronto",43.711,-79.419],"M5P":["Central Toronto",43.697,-79.412],"M5R":["Central Toronto",43.674,-79.403],"M5S":["Downtown Toronto",43.663,-79.399],"M5T":["Downtown Toronto",43.654,-79.398],"M5V":["Downtown Toronto",43.64,-79.4],"M5W":["Downtown Toronto Stn A PO Boxes 25 T",43.644,-79.379],"M5X":["Downtown Toronto",43.649,-79.382],"M6A":["North York",43.722,-79.45],"M6B":["North York",43.708,-79.448],"M6C":["York",43.691,-79.431],"M6E":["York",43.689,-79.451],"M6G":["Downtown Toronto",43.668,-79.421],"M6H":["West Toronto",43.666,-79.438],"M6J":["West Toronto",43.648,-79.418],"M6K":["West Toronto",43.638,-79.43],"M6L":["North York",43.714,-79.487],"M6M":["York",43.693,-79.486],"M6N":["York",43.675,-79.484],"M6P":["West Toronto",43.66,-79.463],"M6R":["West Toronto",43.647,-79.452],"M6S":["West Toronto",43.651,-79.483],"M7A":["Queen's Park Ontario Provincial Gove",43.664,-79.389],"M7Y":["East Toronto Business Reply Mail Pro",43.78,-79.251],"M8V":["Etobicoke",43.608,-79.501],"M8W":["Etobicoke",43.602,-79.54],"M8X":["Etobicoke",43.652,-79.508],"M8Y":["Etobicoke",43.633,-79.494],"M8Z":["Etobicoke",43.626,-79.523],"M9A":["Etobicoke",43.666,-79.528],"M9B":["Etobicoke",43.651,-79.552],"M9C":["Etobicoke",43.644,-79.577],"M9L":["North York",43.76,-79.556],"M9M":["North York",43.737,-79.54],"M9N":["Weston",43.707,-79.517],"M9P":["Etobicoke",43.695,-79.532],"M9R":["Etobicoke",43.69,-79.558],"M9V":["Etobicoke",43.743,-79.588],"M9W":["Etobicoke Northwest",43.714,-79.591],"N0A":["West Haldimand",42.94,-79.945],"N0B":["Wellington",43.557,-80.441],"N0C":["Georgian Bay Southwest Shore",44.256,-80.503],"N0E":["Brant and Norfolk",42.662,-80.557],"N0G":["Huron",44.002,-81.068],"N0H":["Bruce Peninsula",44.694,-81.096],"N0J":["Oxford",42.977,-80.706],"N0K":["Perth",43.507,-81.158],"N0L":["Elgin",42.756,-81.453],"N0M":["Middlesex",43.279,-81.544],"N0N":["Lambton",42.906,-82.11],"N0P":["Kent",42.404,-81.911],"N0R":["Essex",42.178,-82.772],"N1A":["Dunnville",42.9,-79.616],"N1C":["Guelph South",43.492,-80.227],"N1E":["Guelph North",43.568,-80.242],"N1G":["Guelph Central",43.518,-80.226],"N1H":["Guelph Northwest",43.559,-80.3],"N1K":["Guelph West",43.526,-80.305],"N1L":["Guelph East",43.516,-80.19],"N1M":["Fergus",43.7,-80.366],"N1P":["Cambridge South",43.34,-80.296],"N1R":["Cambridge Central",43.367,-80.224],"N1S":["Cambridge Southwest",43.359,-80.335],"N1T":["Cambridge East",43.385,-80.283],"N2A":["Kitchener East",43.441,-80.425],"N2B":["Kitchener Northeast",43.465,-80.447],"N2C":["Kitchener South Central",43.418,-80.445],"N2E":["Kitchener Southwest",43.411,-80.501],"N2G":["Kitchener Central",43.444,-80.489],"N2H":["Kitchener North Central",43.458,-80.482],"N2J":["Waterloo Southeast",43.504,-80.537],"N2K":["Kitchener North",43.496,-80.494],"N2L":["Waterloo South",43.471,-80.545],"N2M":["Kitchener Northwest",43.436,-80.509],"N2N":["Kitchener West",43.426,-80.544],"N2P":["Kitchener Southeast",43.388,-80.43],"N2R":["Kitchener South",43.385,-80.487],"N2T":["Waterloo Southwest",43.453,-80.569],"N2V":["Waterloo Northwest",43.476,-80.584],"N2Z":["Kincardine",44.166,-81.601],"N3A":["Baden",43.4,-80.65],"N3B":["Elmira",43.6,-80.55],"N3C":["Cambridge Northeast",43.439,-80.265],"N3E":["Cambridge Northwest",43.419,-80.35],"N3H":["Cambridge West",43.427,-80.37],"N3L":["Paris",43.2,-80.383],"N3P":["Brantford Northeast",43.182,-80.237],"N3R":["Brantford Central",43.169,-80.268],"N3S":["Brantford Southeast",43.139,-80.236],"N3T":["Brantford Southwest",43.131,-80.325],"N3V":["Brantford Northwest",43.173,-80.298],"N3W":["Caledonia",43.067,-79.933],"N3Y":["Simcoe",42.833,-80.3],"N4B":["Delhi",42.85,-80.5],"N4G":["Tillsonburg",42.86,-80.726],"N4K":["Owen Sound",44.567,-80.944],"N4L":["Meaford",44.6,-80.583],"N4N":["Hanover",44.15,-81.033],"N4S":["Woodstock Central",43.143,-80.734],"N4T":["Woodstock North",43.148,-80.732],"N4V":["Woodstock South",43.115,-80.743],"N4W":["Listowel",43.733,-80.95],"N4X":["St. Mary's",43.266,-81.169],"N4Z":["Stratford South",43.363,-81.007],"N5A":["Stratford North",43.367,-80.95],"N5C":["Ingersoll",43.033,-80.883],"N5H":["Aylmer",42.767,-80.983],"N5L":["Port Stanley",42.667,-81.216],"N5P":["St. Thomas North",42.778,-81.177],"N5R":["St. Thomas South",42.76,-81.176],"N5V":["London",43.023,-81.164],"N5W":["London East",42.986,-81.182],"N5X":["London",43.044,-81.239],"N5Y":["London",43.012,-81.231],"N5Z":["London",42.966,-81.205],"N6A":["London North",42.998,-81.256],"N6B":["London Central",42.983,-81.239],"N6C":["London South",42.958,-81.238],"N6E":["London",42.919,-81.224],"N6G":["London",43.015,-81.305],"N6H":["London West",42.992,-81.34],"N6J":["London",42.955,-81.273],"N6K":["London",42.954,-81.342],"N6L":["London",42.872,-81.247],"N6M":["London",42.963,-81.139],"N6N":["London",42.9,-81.159],"N6P":["London",42.891,-81.324],"N7A":["Goderich",43.75,-81.716],"N7G":["Strathroy",42.955,-81.622],"N7L":["Chatham Northwest",42.421,-82.199],"N7M":["Chatham Southeast",42.424,-82.118],"N7S":["Sarnia Central",42.989,-82.359],"N7T":["Sarnia Southwest",42.958,-82.278],"N7V":["Sarnia Northwest",43.0,-82.393],"N7W":["Sarnia Southeast",42.964,-82.326],"N7X":["Sarnia Northeast",43.021,-82.321],"N8A":["Wallaceburg",42.593,-82.388],"N8H":["Leamington",42.055,-82.606],"N8M":["Essex",42.175,-82.825],"N8N":["Tecumseh Outskirts",42.295,-82.867],"N8P":["Windsor",42.328,-82.91],"N8R":["Windsor",42.307,-82.915],"N8S":["Windsor",42.328,-82.947],"N8T":["Windsor",42.304,-82.946],"N8V":["Tecumseh",42.277,-82.945],"N8W":["Windsor",42.284,-82.977],"N8X":["Windsor South Central",42.293,-83.019],"N8Y":["Windsor East",42.318,-82.993],"N9A":["Windsor",42.201,-83.028],"N9B":["Windsor",42.295,-83.052],"N9C":["Windsor",42.277,-83.079],"N9E":["Windsor South",42.265,-83.031],"N9G":["Windsor",42.248,-82.995],"N9H":["La Salle East",42.232,-83.028],"N9J":["La Salle West",42.219,-83.08],"N9K":["Tecumseh Central",42.298,-82.87],"N9V":["Amherstburg",42.117,-83.05],"N9Y":["Kingsville",42.05,-82.76],"P0A":["Nipissing Central",45.588,-79.355],"P0B":["Nipissing South",45.186,-79.412],"P0C":["Parry Sound Mid-Shore",45.127,-79.786],"P0E":["Parry Sound South Shore",44.861,-79.507],"P0G":["Parry Sound North Shore",45.672,-80.369],"P0H":["Nipissing North",46.311,-79.362],"P0J":["Timiskaming South",47.578,-80.204],"P0K":["Timiskaming North",48.523,-80.308],"P0L":["Cochrane Region",51.97,-83.537],"P0M":["Algoma, Sudbury District and Greater",47.653,-82.475],"P0N":["Timmins Region",48.603,-81.011],"P0P":["Manitoulin",45.757,-82.215],"P0R":["Algoma Southwest",46.598,-83.038],"P0S":["Lake Superior East Shore",48.048,-84.673],"P0T":["Lake Superior North Shore",49.292,-88.756],"P0V":["Northwestern Ontario",52.965,-90.15],"P0W":["Rainy River Region",48.875,-93.752],"P0X":["Kenora Region",50.929,-93.309],"P0Y":["Lake of the Woods East Shore",49.76,-95.1],"P1A":["North Bay South",46.28,-79.45],"P1B":["North Bay Central",46.336,-79.583],"P1C":["North Bay North",46.34,-79.422],"P1H":["Huntsville",45.333,-79.216],"P1L":["Bracebridge",45.033,-79.316],"P1P":["Gravenhurst",44.917,-79.366],"P2A":["Parry Sound",45.35,-80.033],"P2B":["Sturgeon Falls",46.367,-79.916],"P2N":["Kirkland Lake",48.145,-80.038],"P3A":["Greater Sudbury",46.519,-80.934],"P3B":["Greater Sudbury",46.485,-80.93],"P3C":["Greater Sudbury",46.513,-81.022],"P3E":["Greater Sudbury",46.268,-80.906],"P3G":["Greater Sudbury",46.403,-80.975],"P3L":["Greater Sudbury",46.594,-80.85],"P3N":["Greater Sudbury",46.584,-81.003],"P3P":["Greater Sudbury",46.726,-81.017],"P3Y":["Greater Sudbury",46.443,-81.127],"P4N":["Timmins Southeast",48.467,-81.333],"P4P":["Timmins North",48.498,-81.345],"P4R":["Timmins West",48.47,-81.4],"P5A":["Elliot Lake",46.383,-82.633],"P5E":["Espanola",46.258,-81.766],"P5N":["Kapuskasing",49.417,-82.433],"P6A":["Sault Ste. Marie East",46.517,-84.333],"P6B":["Sault Ste. Marie Central",46.531,-84.305],"P6C":["Sault Ste. Marie North",46.535,-84.373],"P7A":["Thunder Bay Northeast",48.46,-89.204],"P7B":["Thunder Bay North Central",48.947,-89.406],"P7C":["Thunder Bay Central",48.352,-89.465],"P7E":["Thunder Bay South Central",48.368,-89.284],"P7G":["Thunder Bay North",48.4,-89.317],"P7J":["Thunder Bay South",48.283,-89.367],"P7K":["Thunder Bay West",48.373,-89.348],"P7L":["Neebing",48.167,-89.417],"P8N":["Dryden",49.783,-92.75],"P8T":["Sioux Lookout",50.067,-91.984],"P9A":["Fort Frances",48.639,-93.447],"P9N":["Kenora",49.757,-94.343]};
-
-const CLINICIANS = [{"id": "c1", "n": "(Demo) Clinician ABC", "cred": "RSW", "fsa": "L3Y", "city": "Newmarket", "virtual": true, "tags": ["mi", "trauma", "cenaps", "concurrent", "opioid", "harmred", "cbt", "relational"], "colours": ["BLACK", "BLUE"], "email": "demo.abc@example-clinician.test"}, {"id": "c2", "n": "(Demo) Clinician XYZ", "cred": "RP", "fsa": "L6V", "city": "Brampton", "virtual": true, "tags": ["mi", "cbt", "dbt", "concurrent", "alcohol", "stimulant", "act", "crisis", "cenaps"], "colours": ["WHITE", "YELLOW"], "email": "demo.xyz@example-clinician.test"}, {"id": "c3", "n": "(Demo) Clinician 123", "cred": "RP-Q", "fsa": "L6Y", "city": "Brampton", "virtual": true, "tags": ["mi", "group", "family", "relational", "ed", "gambling", "concurrent", "trauma", "cbt"], "colours": ["BLUE", "WHITE"], "email": "demo.123@example-clinician.test"}];
-
-// ------------------------------------------------------------------
-// DEMO ONLY — fictional clinician roster (3 invented people: ABC, XYZ, 123 — no real
-// clinicians). Each is pinned to a real Ontario FSA so distance is real
-// geometry; names, credentials and modalities are invented for the demo.
-// ------------------------------------------------------------------
-const MODALITY_LABEL = {
-  mi:'Motivational Interviewing', cbt:'CBT', dbt:'DBT / emotion regulation',
-  trauma:'Trauma-focused therapy (EMDR / CPT)', cenaps:'Relapse prevention (CENAPS)',
-  concurrent:'Concurrent disorders (mental health + substance use)', opioid:'Opioid use / OAT support',
-  alcohol:'Alcohol use', stimulant:'Stimulant use', harmred:'Harm reduction', ed:'Eating disorders',
-  gambling:'Gambling & gaming', family:'Family & couples', group:'Group therapy',
-  act:'ACT / mindfulness', relational:'Relational / depth work', crisis:'Crisis stabilization'
-};
-const BASELINE_TAGS = ['mi'];
-const TIME_LABEL = { any:'Any time', morning:'Mornings', afternoon:'Afternoons', evening:'Evenings' };
-const PREFER_LABEL = { call:'a phone call', text:'a text message', email:'email' };
-const SAFEMSG_LABEL = { yes:'yes', no:'NO — live call only, do not leave messages', unsure:'not sure — ask before leaving a message' };
-
-// ---------- geometry ----------
-function haversineKm(lat1, lon1, lat2, lon2){
-  const R = 6371, t = x => x * Math.PI / 180;
-  const dLat = t(lat2 - lat1), dLon = t(lon2 - lon1);
-  const h = Math.sin(dLat/2)**2 + Math.cos(t(lat1)) * Math.cos(t(lat2)) * Math.sin(dLon/2)**2;
-  return 2 * R * Math.asin(Math.sqrt(h));
-}
-function fsaOf(raw){ return (raw || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 3); }
-function fsaPlace(fsa){ const r = ON_FSA[fsa]; return r ? { label:r[0], lat:r[1], lng:r[2] } : null; }
-function formatPhone(raw){
-  let d = (raw || '').replace(/\D/g, '');
-  if (d.length === 11 && d[0] === '1') d = d.slice(1);
-  if (d.length !== 10) return null;
-  return '(' + d.slice(0,3) + ') ' + d.slice(3,6) + '-' + d.slice(6);
-}
-
-// ---------- what the member's answers say they need ----------
-// Every need carries the plain-language reason it was added, so a
-// clinician match can always be traced back to something the member said.
-function deriveNeeds(m){
-  const need = {};
-  const add = (tag, w, why) => {
-    if (!need[tag]) need[tag] = { w:0, why:[] };
-    need[tag].w += w;
-    if (why && !need[tag].why.includes(why)) need[tag].why.push(why);
-  };
-  const r = STATE.raft, s = STATE.screening;
-  add('mi', 1, 'a good starting approach while readiness is still forming');
-  if (r.addiction === 'opioids'){ add('opioid', 3, 'main substance: opioids'); add('harmred', 1, 'main substance: opioids'); }
-  else if (r.addiction === 'alcohol'){ add('alcohol', 3, 'main substance: alcohol'); }
-  else if (r.addiction === 'stimulants'){ add('stimulant', 3, 'main substance: stimulants'); }
-  else if (r.addiction === 'poly'){ add('cenaps', 2, 'more than one substance'); add('harmred', 1, 'more than one substance'); add('concurrent', 1, 'more than one substance'); }
-  if (s.cageaid && s.cageaid.positive){ add('cenaps', 1, 'positive CAGE-AID screen'); add('mi', 1, 'positive CAGE-AID screen'); }
-  if (s.pcptsd5 && s.pcptsd5.positive){ add('trauma', 3, 'positive PC-PTSD-5 screen'); add('concurrent', 1, 'positive PC-PTSD-5 screen'); }
-  if (s.phq2 && s.phq2.positive){ add('cbt', 2, 'positive PHQ-2 screen'); add('concurrent', 2, 'positive PHQ-2 screen'); }
-  if (s.gad2 && s.gad2.positive){ add('cbt', 2, 'positive GAD-2 screen'); add('concurrent', 2, 'positive GAD-2 screen'); add('act', 1, 'positive GAD-2 screen'); }
-  if ((s.scoff && s.scoff.positive) || r.flags.includes('eating')) add('ed', 3, (s.scoff && s.scoff.positive) ? 'positive SCOFF screen' : 'eating concerns flagged');
-  if ((s.bbgs && s.bbgs.positive) || r.flags.includes('gambling')) add('gambling', 3, (s.bbgs && s.bbgs.positive) ? 'positive gambling screen' : 'gambling flagged');
-  if (r.flags.includes('mood')) add('concurrent', 1, 'low mood, anxiety or a past difficult experience flagged');
-  // Colour (Hue) only contributes where a modality link is documented. GREEN and GOLD are
-  // not mapped yet (same rule the organization match already follows), so they add nothing.
-  const hue = m.hueColour;
-  if (hue === 'BLUE'){ add('relational', 2, 'BLUE profile — connection and depth'); add('group', 1, 'BLUE profile — connection and depth'); }
-  else if (hue === 'BLACK'){ add('trauma', 2, 'BLACK profile — depth of pattern'); add('cenaps', 1, 'BLACK profile — depth of pattern'); }
-  else if (hue === 'YELLOW'){ add('dbt', 2, 'YELLOW profile — reactivity'); }
-  else if (hue === 'RED'){ add('crisis', 3, 'RED profile — acute risk'); }
-  else if (hue === 'WHITE'){ add('cbt', 1, 'WHITE profile — structure and foundation'); }
-  return need;
-}
-
-// ---------- rank clinicians: modality fit 55% + distance 35% + colour 10% ----------
-function rankClinicians(m){
-  const needs = deriveNeeds(m);
-  const place = STATE.member && STATE.member.place;
-  const totalW = Object.values(needs).reduce((a, n) => a + n.w, 0) || 1;
-  const out = [];
-  CLINICIANS.forEach(c => {
-    const cp = fsaPlace(c.fsa);
-    const matched = c.tags.filter(t => needs[t]);
-    const substantive = matched.filter(t => !BASELINE_TAGS.includes(t));
-    if (!substantive.length) return;                       // hard rule: must cover something real
-    const fit = Math.min(1, matched.reduce((a, t) => a + needs[t].w, 0) / totalW);
-    const km = (place && cp) ? haversineKm(place.lat, place.lng, cp.lat, cp.lng) : null;
-    const inPerson = km == null ? 0.2 : (km <= 25 ? 1 : (km >= 150 ? 0 : 1 - (km - 25) / 125));
-    let mode, distScore;
-    if (c.virtual){
-      if (km != null && inPerson >= 0.6){ mode = 'In person + virtual'; distScore = inPerson; }
-      else { mode = 'Virtual'; distScore = km == null ? 0.5 : 0.6; }
-    } else {
-      if (km != null && km > 150) return;                  // in-person only and too far: drop
-      mode = 'In person only'; distScore = inPerson;
-    }
-    const hueHit = (m.hueColour && c.colours.includes(m.hueColour)) ? 1 : 0;
-    const score = 0.55 * fit + 0.35 * distScore + 0.10 * hueHit;
-    out.push({ c, km, mode, fit, matched, substantive, score, hueHit });
+(function(){
+  var root=document.documentElement, b=document.getElementById('theme');
+  try{var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s);}catch(e){}
+  b.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    var next=dark?'light':'dark'; root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
   });
-  out.sort((a, b) => b.score - a.score);
-  return { ranked: out, needs };
-}
-
-function pipelineFlags(m){
-  const mem = STATE.member, r = STATE.raft, s = STATE.screening, L = [];
-  L.push(STATE.safetyTriggered ? 'SAFETY GATE: one or more items endorsed — member saw crisis resources and chose to continue. Call first.' : 'Safety gate: passed — no items endorsed');
-  if (mem.safeMsg === 'no') L.push('NOT safe to leave messages — live call only');
-  else if (mem.safeMsg === 'unsure') L.push('Unsure whether messages are safe — ask before leaving one');
-  if (r.roof === 'no') L.push('No roof tonight — housing is the first conversation');
-  if (m.hueColour === 'RED') L.push('RED profile — treat as acute');
-  if (m.profile) L.push('Colour profile: ' + m.profile.primaryColour + (m.profile.secondaryColour ? ' + ' + m.profile.secondaryColour : '') + ' · overall strain ' + m.profile.composite + '%');
-  const pos = [];
-  if (s.cageaid && s.cageaid.positive) pos.push('CAGE-AID');
-  if (s.pcptsd5 && s.pcptsd5.positive) pos.push('PC-PTSD-5');
-  if (s.phq2 && s.phq2.positive) pos.push('PHQ-2');
-  if (s.gad2 && s.gad2.positive) pos.push('GAD-2');
-  if (s.scoff && s.scoff.positive) pos.push('SCOFF');
-  if (s.bbgs && s.bbgs.positive) pos.push('gambling screen');
-  if (pos.length) L.push('Positive screens: ' + pos.join(', ') + ' (screens, not diagnoses)');
-  if (r.flags.includes('sexual')) L.push('Compulsive sexual behaviour flagged — worker follow-up only');
-  if (!mem.place) L.push('Postal code not placed on the Ontario map — virtual options only');
-  return L;
-}
-
-function renderCrisisNotice(){
-  const mem = STATE.member, box = document.getElementById('crisisPipeline');
-  if (!box || !mem) return;
-  if (mem.anon || (!mem.phone && !mem.email)){ box.innerHTML = '<div class="demo-box"><div class="demo-tag">PROTOTYPE</div><p class="fhint" style="margin:0;">No contact details were given, so in the full version no one would be able to follow up. The numbers above are the way to reach help now.</p></div>'; return; }
-  const hits = SAFETY_ITEMS.filter(it => STATE.safety[it.id] === 'yes');
-  const ref = 'RWOB-' + new Date().toISOString().slice(2,10).replace(/-/g,'') + '-' + (mem.fsa || 'NA');
-  box.innerHTML = '<div class="demo-box"><div class="demo-tag">PROTOTYPE — STAFF NOTICE THAT WOULD GO OUT (NOTHING SENT)</div><p class="fhint">In the full version, anyone who answers yes at the safety gate and left contact details would land in the pipeline so a worker can follow up. This is what staff would receive. In this prototype nothing is sent.</p></div>' +
-    emailCard('RWOB Pipeline — Carby Sum, CEO (navigator queue)', 'toronto@recoverywithoutborders.org',
-      'URGENT FOLLOW-UP — safety gate — ' + mem.name + ' — ' + ref,
-      'Case ' + ref + '\n' + mem.name + ' created a profile and stopped at the safety gate. They saw the crisis resources. Follow up as soon as possible, using their stated contact preferences.\n\nSAFETY ITEMS ANSWERED YES\n' + hits.map(it => '- ' + it.text).join('\n') +
-      '\n\nHOW TO REACH THEM\n' + contactBlock(true) + '\n\nNo further answers were collected. No clinician matching was done and nothing was shared outside RWOB.\n\nSTATUS: NEW — URGENT — not yet contacted\n\n— Sent from the RWOB Integrated Intake prototype (demo)');
-}
-
-function distanceText(km){
-  if (km == null) return 'distance unknown — add a postal code';
-  if (km < 1) return 'under 1 km';
-  return Math.round(km) + ' km straight-line';
-}
-
-function renderClinicianChoices(m){
-  const wrap = document.getElementById('clinicianChoices');
-  if (!wrap) return;
-  if (!STATE.member){ wrap.innerHTML = '<p class="lede">Create a member profile first.</p>'; return; }
-  const { ranked, needs } = rankClinicians(m);
-  STATE.lastRank = ranked;
-  STATE.matchedClinicians = ranked.map(x => x.c);
-  const place = STATE.member.place;
-  const needLine = Object.keys(needs).filter(t => !BASELINE_TAGS.includes(t) || needs[t].w > 1)
-    .sort((a, b) => needs[b].w - needs[a].w)
-    .map(t => '<span class="mchip hit" title="' + escapeHtml(needs[t].why.join('; ')) + '">' + MODALITY_LABEL[t] + '</span>').join('');
-  let html = '<div class="rule-box" style="margin-top:0;"><strong>What we matched on:</strong><div class="mchips">' + needLine +
-    '</div><div style="margin-top:8px;">' +
-    (place ? 'Distance is measured from <strong>' + escapeHtml(place.label) + '</strong> (' + STATE.member.fsa + ') — straight-line, not drive time.'
-           : 'No usable postal code on file, so distances can\'t be calculated — virtual options are favoured.') +
-    '</div></div>';
-  if (!ranked.length){
-    wrap.innerHTML = html + '<p class="lede">No demo clinician covers these needs within range — in a real deployment this would go to a worker for manual matching.</p>';
-    return;
-  }
-  html += ranked.slice(0, 5).map(x => {
-    const c = x.c;
-    const why = x.substantive.map(t => MODALITY_LABEL[t] + ' <span style="color:var(--ink-tertiary);">(' + escapeHtml(needs[t].why[0]) + ')</span>').join('; ');
-    const chips = c.tags.map(t => '<span class="mchip' + (needs[t] && !BASELINE_TAGS.includes(t) ? ' hit' : '') + '">' + MODALITY_LABEL[t] + '</span>').join('');
-    return '<div class="match-card" style="border:1px solid var(--border-light);border-radius:8px;padding:14px 16px;margin-bottom:10px;background:var(--surface);">' +
-      '<label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer;">' +
-      '<input type="checkbox" class="clinChoice" value="' + c.id + '" style="margin-top:4px;">' +
-      '<span style="flex:1;min-width:0;">' +
-        '<div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap;">' +
-          '<strong style="font-family:\'DM Sans\',system-ui,sans-serif;">' + c.n + ', ' + c.cred + '</strong>' +
-          '<span style="font-size:11px;color:var(--ink-tertiary);">Match ' + Math.round(x.score * 100) + '</span></div>' +
-        '<div style="font-size:12.5px;color:var(--ink-secondary);margin-top:4px;">' + c.city + ' · ' + distanceText(x.km) + ' · <strong>' + x.mode + '</strong></div>' +
-        '<div class="fit-line"><strong>Covers:</strong> ' + why + '</div>' +
-        '<div class="mchips">' + chips + '</div>' +
-        '<div style="margin-top:8px;">' + c.colours.map(col => '<span class="colour-tag" style="background:' + colourBg(col) + ';color:' + colourVar(col) + ';border:1px solid ' + colourVar(col) + ';font-size:10.5px;padding:3px 9px;">' + col + '</span>').join(' ') + '</div>' +
-        '<div style="font-size:11px;color:var(--ink-tertiary);margin-top:6px;">Fictional demo clinician — not a real person.</div>' +
-      '</span></label></div>';
-  }).join('') + '<p class="fhint">Highlighted chips are the modalities that match your answers. Check any clinician(s) you\'d want introduced — only checked ones get a notification below.</p>';
-  wrap.innerHTML = html;
-}
-
-// ---------- member creation ----------
-document.addEventListener('DOMContentLoaded', () => {
-  renderDots('start');
-  buildSafetyItems();
-  const postal = document.getElementById('mPostal');
-  const pNote = document.getElementById('mPostalNote');
-  const DEFAULT_P = 'The first three characters are enough. Used to find clinicians near you.';
-  postal.addEventListener('input', () => {
-    const fsa = fsaOf(postal.value);
-    if (!postal.value.trim()){ pNote.className = 'fnote'; pNote.textContent = DEFAULT_P; return; }
-    if (fsa.length < 3){ pNote.className = 'fnote'; pNote.textContent = 'Keep typing — three characters is enough.'; return; }
-    if (!/^[A-Z]\d[A-Z]$/.test(fsa)){ pNote.className = 'fnote bad'; pNote.textContent = 'That doesn\'t look like a Canadian postal code.'; return; }
-    const p = fsaPlace(fsa);
-    if (p){ pNote.className = 'fnote ok'; pNote.textContent = 'Found: ' + p.label + '. We\'ll look for clinicians near here.'; }
-    else if (/^[KLMNP]/.test(fsa)){ pNote.className = 'fnote'; pNote.textContent = 'We couldn\'t place that code on our map — you\'ll still see virtual clinicians.'; }
-    else { pNote.className = 'fnote'; pNote.textContent = 'That\'s outside Ontario — RWOB\'s directory is Ontario-only, so you\'ll see virtual clinicians.'; }
-  });
-  const phone = document.getElementById('mPhone');
-  const phNote = document.getElementById('mPhoneNote');
-  phone.addEventListener('blur', () => {
-    if (!phone.value.trim()){ phNote.className = 'fnote'; phNote.textContent = ''; return; }
-    const f = formatPhone(phone.value);
-    if (f){ phone.value = f; phNote.className = 'fnote'; phNote.textContent = ''; }
-    else { phNote.className = 'fnote bad'; phNote.textContent = 'Please enter a 10-digit phone number.'; }
-  });
-});
-
-function createMember(anon){
-  const err = document.getElementById('mFormError');
-  err.textContent = '';
-  const name = document.getElementById('mName').value.trim();
-  const phoneRaw = document.getElementById('mPhone').value.trim();
-  const email = document.getElementById('mEmail').value.trim();
-  const postalRaw = document.getElementById('mPostal').value.trim().toUpperCase();
-  const problems = [];
-  const phone = (!anon && phoneRaw) ? formatPhone(phoneRaw) : '';
-  const pref = (document.querySelector('input[name="mPrefer"]:checked') || {}).value || 'call';
-  if (!anon){
-    if (phoneRaw && !phone) problems.push('That phone number needs 10 digits.');
-    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) problems.push('That email doesn\'t look right.');
-    if (!phoneRaw && !email) problems.push('Add a phone number or an email, or choose "Continue without contact details".');
-    if ((pref === 'call' || pref === 'text') && !phoneRaw && email) problems.push('You picked ' + pref + ' — add a phone number, or choose email.');
-    if (pref === 'email' && !email && phoneRaw) problems.push('You picked email — add an email address, or choose call/text.');
-    if (!document.getElementById('mConsentContact').checked) problems.push('Please confirm we may contact you using these details.');
-  }
-  if (problems.length){ err.textContent = problems.join(' '); return; }
-  const fsa = fsaOf(postalRaw);
-  const radio = n => (document.querySelector('input[name="' + n + '"]:checked') || {}).value;
-  STATE.postal = postalRaw;
-  STATE.member = {
-    name: name || 'Member', anon: !!anon,
-    phone: anon ? '' : phone, email: anon ? '' : email, postalRaw, fsa,
-    place: fsa.length === 3 ? fsaPlace(fsa) : null,
-    prefer: radio('mPrefer') || 'call',
-    safeMsg: radio('mSafeMsg') || 'yes',
-    bestTime: document.getElementById('mTime').value,
-    consentContact: !anon
-  };
-  if (!anon) document.getElementById('mPhone').value = phone;
-  goTo('safety');
-}
-
-// ---------- notifications (simulated) ----------
-function plainTextSummary(){
-  const r = STATE.raft, s = STATE.screening, m = computeMatch();
-  const lines = [];
-  lines.push('HALO-WBBRY colour profile: ' + (m.hueColour || 'not identified') + (m.secondary ? ' + ' + m.secondary : ''));
-  if (m.profile) lines.push('Four areas (higher = more strain): motivation ' + m.profile.dosePct.D + '%, connection ' + m.profile.dosePct.O + '%, steadiness ' + m.profile.dosePct.S + '%, stress relief ' + m.profile.dosePct.E + '%');
-  lines.push('Where they want to go and be: ' + (STATE.hcs || '—'));
-  lines.push('What they need most right now: ' + (r.target || '—'));
-  lines.push('Has a roof tonight: ' + (r.roof || '—'));
-  lines.push('Main substance: ' + (r.addiction || '—'));
-  lines.push('Fundamentals needed: ' + (r.fundamentals.length ? r.fundamentals.join(', ') : 'none selected'));
-  const screenLines = [];
-  if (s.cageaid) screenLines.push('CAGE-AID ' + s.cageaid.score + '/4' + (s.cageaid.positive ? ' (positive screen)' : ''));
-  if (s.scoff) screenLines.push('SCOFF ' + s.scoff.score + '/5' + (s.scoff.positive ? ' (positive screen)' : ''));
-  if (s.phq2) screenLines.push('PHQ-2 ' + s.phq2.score + '/6' + (s.phq2.positive ? ' (positive screen)' : ''));
-  if (s.gad2) screenLines.push('GAD-2 ' + s.gad2.score + '/6' + (s.gad2.positive ? ' (positive screen)' : ''));
-  if (s.pcptsd5) screenLines.push('PC-PTSD-5 ' + s.pcptsd5.score + '/5' + (s.pcptsd5.positive ? ' (positive screen)' : ''));
-  if (s.bbgs) screenLines.push('Gambling screen: ' + (s.bbgs.positive ? 'positive' : 'negative'));
-  if (r.flags.includes('sexual')) screenLines.push('Compulsive sexual behaviour flagged — worker follow-up only, no instrument used');
-  lines.push('Screening results: ' + (screenLines.length ? screenLines.join('; ') : 'none completed'));
-  return lines.join('\n');
-}
-
-function contactBlock(includeDetails){
-  const m = STATE.member, L = [];
-  L.push('Name: ' + m.name);
-  if (includeDetails){
-    L.push('Phone: ' + (m.phone || '(none given)'));
-    L.push('Email: ' + (m.email || '(none given)'));
-  }
-  L.push('Prefers: ' + PREFER_LABEL[m.prefer]);
-  L.push('OK to leave a voicemail / send a text: ' + SAFEMSG_LABEL[m.safeMsg]);
-  L.push('Best time: ' + TIME_LABEL[m.bestTime]);
-  L.push('Postal area: ' + ((m.fsa && m.place) ? m.fsa + ' (' + m.place.label + ')' : (m.postalRaw || '(not given)')));
-  return L.join('\n');
-}
-
-function escapeHtml(str){
-  return (str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
-
-function emailCard(to, addr, subject, body){
-  const id = 'em_' + Math.random().toString(36).slice(2, 9);
-  return '<div class="email-card">' +
-    '<div class="em-to">To — ' + escapeHtml(to) + '</div>' +
-    '<div class="em-addr">' + escapeHtml(addr) + '</div>' +
-    '<div class="em-subject">' + escapeHtml(subject) + '</div>' +
-    '<div class="em-body" id="' + id + '">' + escapeHtml(body) + '</div>' +
-    '<button class="btn btn-secondary em-copy" onclick="copyEmailBody(\'' + id + '\')">Copy this email</button></div>';
-}
-
-function copyEmailBody(id){
-  const text = document.getElementById(id).innerText;
-  try { navigator.clipboard.writeText(text).catch(() => {}); } catch (e) {}
-}
-
-function renderEmailPreviews(){
-  const wrap = document.getElementById('emailPreviews');
-  const mem = STATE.member;
-  if (!mem){ wrap.innerHTML = '<div class="rule-box">Create a member profile first.</div>'; return; }
-  if (mem.anon || (!mem.phone && !mem.email)){ wrap.innerHTML = '<div class="rule-box" style="border-color:var(--yellow);">You continued without contact details, so there is no way for a worker to reach you, and nothing would be sent. You can print this page or take a screenshot to keep your results, or start over and add a phone or email if you want to be connected.</div>'; return; }
-  const m = computeMatch();
-  const chosenOrgNames = [...document.querySelectorAll('.orgChoice:checked')].map(el => el.value);
-  const chosenIds = [...document.querySelectorAll('.clinChoice:checked')].map(el => el.value);
-  const chosen = (STATE.lastRank || []).filter(x => chosenIds.includes(x.c.id));
-  if (!chosenOrgNames.length && !chosen.length){
-    wrap.innerHTML = '<div class="rule-box" style="border-color:var(--yellow);">Nothing is checked above yet — the Member Choice step means nothing is generated until you pick an organization and/or clinician to move forward with.</div>';
-    return;
-  }
-  if (!document.getElementById('shareConsent').checked){
-    wrap.innerHTML = '<div class="rule-box" style="border-color:var(--yellow);">Tick the sharing box first — nothing is generated until you agree that your answers can go to the people you\'ve chosen.</div>';
-    return;
-  }
-  const summary = plainTextSummary();
-  const needs = deriveNeeds(m);
-  const name = mem.name;
-  const selfAddr = mem.email || '(no email given — a real version would call or text you instead)';
-  const orgLine = chosenOrgNames.length ? chosenOrgNames.map(n => '- ' + n).join('\n') : '(none selected)';
-  const clinLine = chosen.length ? chosen.map(x => '- ' + x.c.n + ', ' + x.c.cred + ' — ' + x.c.city + ', ' + distanceText(x.km) + ', ' + x.mode).join('\n') : '(none selected)';
-
-  let html = '<div class="demo-box"><div class="demo-tag">SIMULATED — NOTHING ACTUALLY SENT</div><p class="fhint">These emails show what a real notification would contain once this has been through a privacy and consent review and is wired to a real mail account. Copy any of them to see the full text.</p></div>';
-  if (mem.safeMsg === 'no' && mem.prefer !== 'email'){
-    html += '<div class="rule-box" style="border-color:var(--yellow);">You said it isn\'t safe to leave messages, and your preferred contact isn\'t email — a real version would hold the email to you below and call you live instead.</div>';
-  }
-
-  // 1. To the member
-  html += emailCard('You (the member)', selfAddr, 'Your Recovery Without Borders intake — what you chose',
-    'Hi ' + name + ',\n\nThanks for going through the intake. Here is what you told us and who you chose to move forward with, so you have a record of it.\n\n' + summary +
-    '\n\nOrganization(s) you chose:\n' + orgLine + '\n\nClinician(s) you chose:\n' + clinLine +
-    '\n\nWhat was shared, and with whom:\n- Recovery Without Borders: your answers and your contact details\n' +
-    (chosen.length ? chosen.map(x => '- ' + x.c.n + ': your answers and how/when to reach you (not your phone or email until you\'ve spoken with us)').join('\n') : '- No clinician: nothing shared outside RWOB') +
-    '\n\nSomeone from Recovery Without Borders will contact you by ' + PREFER_LABEL[mem.prefer] + ' (' + TIME_LABEL[mem.bestTime].toLowerCase() + ') before anyone else reaches out. If anything above doesn\'t feel right, tell us — you\'re not locked into this.\n\n— Recovery Without Borders');
-
-  // 2. To "us" — the RWOB pipeline (navigator queue), cc Carby Sum
-  const ref = 'RWOB-' + new Date().toISOString().slice(2,10).replace(/-/g,'') + '-' + (mem.fsa || 'NA');
-  const flagLines = pipelineFlags(m);
-  const others = (STATE.lastRank || []).filter(x => !chosenIds.includes(x.c.id)).slice(0,3);
-  html += emailCard('RWOB Pipeline — Carby Sum, CEO (navigator queue)', 'toronto@recoverywithoutborders.org',
-    'PIPELINE — ready for call — ' + name + ' — ' + ref,
-    'Case ' + ref + '\n' + name + ' created a profile and finished the integrated intake. Consent to share with the people below was given on screen. Call them FIRST, talk through the clinician options, then make the warm handoff. Nobody else should contact them before you do.\n\nFLAGS FOR THE CALL\n' + flagLines.map(l => '- ' + l).join('\n') +
-    '\n\nHOW TO REACH THEM\n' + contactBlock(true) +
-    '\n\nWHAT THEY TOLD US\n' + summary +
-    '\n\nORGANIZATION(S) THEY CHOSE\n' + orgLine +
-    '\n\nCLINICIAN(S) THEY CHOSE\n' + (chosen.length ? chosen.map(x => '- ' + x.c.n + ', ' + x.c.cred + ' (' + x.c.email + ')\n    ' + x.c.city + ' · ' + distanceText(x.km) + ' · ' + x.mode + '\n    Matched on: ' + x.substantive.map(t => MODALITY_LABEL[t] + ' [' + needs[t].why[0] + ']').join('; ')).join('\n') : '(none selected)') +
-    (others.length ? '\n\nOTHER STRONG MATCHES (not chosen — mention if they change their mind)\n' + others.map(x => '- ' + x.c.n + ' — ' + x.c.city + ', ' + distanceText(x.km) + ', ' + x.mode + ', score ' + Math.round(x.score*100)).join('\n') : '') +
-    '\n\nCALL PLAN\n1. Use ' + PREFER_LABEL[mem.prefer] + ' (' + TIME_LABEL[mem.bestTime].toLowerCase() + '). ' + (mem.safeMsg === 'yes' ? 'OK to leave a message.' : 'Do NOT leave a message unless they said it is safe — try again later.') +
-    '\n2. Open with what they said they want: "' + (STATE.raft.target || 'their named destination') + '".\n3. Walk through each chosen clinician: what they cover, where they are, in person or virtual, and why the answers pointed there.\n4. Ask: still want the introduction? Any clinician they would rather not have?\n5. Confirm how the clinician should reach them, then make the warm handoff (three-way call or a same-day intro message).\n6. Log the outcome: reached / no answer / declined / handed off.\n\nSTATUS: NEW — not yet contacted\n\n— Sent from the RWOB Integrated Intake prototype (demo)');
-
-  // 3. To each chosen clinician — minimum necessary: preferences and area, not phone or email
-  chosen.forEach(x => {
-    const c = x.c;
-    html += emailCard(c.n + ', ' + c.cred + ' (fictional demo clinician)', c.email, 'Warm handoff — a Recovery Without Borders member chose you',
-      'Hi ' + c.n.replace('(Demo) ', '') + ',\n\nA Recovery Without Borders member picked you from their matches and agreed to share what they told us, so they don\'t have to repeat their story. RWOB will call them first and then connect you — this is a heads-up, not a referral to act on yet. Please wait for RWOB\'s introduction before reaching out.\n\nWHY THEY MATCHED TO YOU\n' +
-      x.substantive.map(t => '- ' + MODALITY_LABEL[t] + ' — ' + needs[t].why[0]).join('\n') +
-      '\n- ' + x.mode + ' · ' + distanceText(x.km) + (x.hueHit ? '\n- Colour profile also matches yours (' + m.hueColour + ')' : '') +
-      '\n\nWHAT THE MEMBER TOLD US\n' + summary +
-      '\n\nCONTACT PREFERENCES (phone and email stay with RWOB until the introduction)\n' + contactBlock(false) +
-      '\n\nRWOB contact for this handoff: Carby Sum, CEO (toronto@recoverywithoutborders.org)\n\n— Sent from the RWOB Integrated Intake prototype (demo)');
-  });
-  if (!chosen.length) html += '<div class="rule-box">No clinician was chosen — only the member and RWOB notifications above would go out.</div>';
-  wrap.innerHTML = html;
-}
-
-
-// ============================================================
-// RWOB Integrated Intake & Navigation — prototype
-// Built by Neil J. Schwab. Not an official RWOB system.
-// ============================================================
-
-let STATE = {
-  postal: '',
-  member: null,
-  lastRank: [],
-  safety: {},
-  raft: { roof:null, addiction:'none', fundamentals:[], target:'', flags:[] },
-  screening: {},
-  hcs: '',
-  profile: null,
-  safetyTriggered: false,
-  matchedClinicians: [],
-};
-
-const VIEWS = ['start','safety','raft','screening','checkin','results'];
-
-function goTo(name){
-  VIEWS.forEach(v=>{
-    const el = document.getElementById('view-'+v);
-    if (el) el.classList.toggle('active', v===name);
-  });
-  document.getElementById('view-crisis').classList.remove('active');
-  renderDots(name);
-  window.scrollTo(0,0);
-}
-
-function renderDots(current){
-  const wrap = document.getElementById('stepDots');
-  const order = ['start','safety','raft','screening','checkin','results'];
-  const idx = order.indexOf(current);
-  wrap.innerHTML = order.map((v,i)=>{
-    let cls = 'step-dot';
-    if (i < idx) cls += ' done';
-    if (i === idx) cls += ' now';
-    return `<div class="${cls}"></div>`;
-  }).join('');
-}
-
-function regionFromPostal(raw){
-  if (!raw) return null;
-  const letter = raw.trim().toUpperCase()[0];
-  const map = { K:'Eastern Ontario', L:'Central Ontario & GTA', M:'Central Ontario & GTA', N:'Southwestern Ontario', P:'Northern Ontario' };
-  return map[letter] || null;
-}
-
-// ---------- SAFETY GATE (Layer 1 — C-SSRS-modelled) ----------
-const SAFETY_ITEMS = [
-  { id:'si1', text:'In the past month, have you wished you were dead or wished you could go to sleep and not wake up?' },
-  { id:'si2', text:'In the past month, have you had any thoughts of killing yourself?' },
-  { id:'si3', text:'Have you thought about how you might do this, or started to work out a plan?' },
-  { id:'si4', text:'In the past 3 months, have you done anything, started to do anything, or prepared to do anything to end your life?' },
-  { id:'si5', text:'In the past month, have you had thoughts of harming someone else?' },
-  { id:'si6', text:'Right now, are you going through withdrawal, or could stopping a substance suddenly be medically dangerous for you?' },
-  { id:'si7', text:'Do you need urgent medical attention right now — an overdose, an injury, or something else that can\'t wait?' },
-  { id:'si8', text:'Are you seeing, hearing, or believing things that others around you say aren\'t there or aren\'t true?' },
-  { id:'si9', text:'Is someone hurting you right now, or are you unsafe where you are staying tonight?' },
-  { id:'si10', text:'Have you recently hurt yourself on purpose, or had thoughts of doing so?' },
-];
-
-function buildSafetyItems(){
-  const wrap = document.getElementById('safetyItems');
-  wrap.innerHTML = SAFETY_ITEMS.map(it=>`
-    <div class="field">
-      <label class="flabel">${it.text}</label>
-      <div class="yn-row danger">
-        <label><input type="radio" name="${it.id}" value="no"><span class="chip">No</span></label>
-        <label><input type="radio" name="${it.id}" value="yes"><span class="chip">Yes</span></label>
-      </div>
-    </div>`).join('');
-}
-
-function submitSafety(){
-  let anyYes = false;
-  SAFETY_ITEMS.forEach(it=>{
-    const sel = document.querySelector(`input[name="${it.id}"]:checked`);
-    const val = sel ? sel.value : null;
-    STATE.safety[it.id] = val;
-    if (val === 'yes') anyYes = true;
-  });
-  if (anyYes){
-    VIEWS.forEach(v=>document.getElementById('view-'+v).classList.remove('active'));
-    document.getElementById('view-crisis').classList.add('active');
-    renderCrisisNotice();
-    window.scrollTo(0,0);
-    return;
-  }
-  goTo('raft');
-}
-
-// ---------- RAFT (Layer 2) ----------
-function submitRAFT(){
-  const roofSel = document.querySelector('input[name="raftRoof"]:checked');
-  STATE.raft.roof = roofSel ? roofSel.value : null;
-  STATE.raft.addiction = document.getElementById('raftAddiction').value;
-  STATE.raft.fundamentals = [...document.querySelectorAll('.raftF:checked')].map(el=>el.value);
-  STATE.raft.target = document.getElementById('raftTarget').value.trim();
-  STATE.raft.flags = [...document.querySelectorAll('.raftFlag:checked')].map(el=>el.value);
-  buildScreening();
-  goTo('screening');
-}
-
-// ---------- CONDITIONAL SCREENING (Layer 3) — real validated instruments ----------
-const CAGE_AID = [
-  'Have you ever felt that you ought to cut down on your drinking or drug use?',
-  'Have people annoyed you by criticizing your drinking or drug use?',
-  'Have you ever felt bad or guilty about your drinking or drug use?',
-  'Have you ever used alcohol or drugs first thing in the morning to steady your nerves or get rid of a hangover (an "eye-opener")?',
-];
-const SCOFF = [
-  'Do you make yourself Sick (induce vomiting) because you feel uncomfortably full?',
-  'Do you worry you have lost Control over how much you eat?',
-  'Have you recently lost more than One stone (about 14 lbs / 6.4 kg) in a 3-month period?',
-  'Do you believe yourself to be Fat when others say you are too thin?',
-  'Would you say that Food dominates your life?',
-];
-const PHQ2 = ['Little interest or pleasure in doing things','Feeling down, depressed, or hopeless'];
-const GAD2 = ['Feeling nervous, anxious, or on edge','Not being able to stop or control worrying'];
-const FREQ_OPTIONS = [['0','Not at all'],['1','Several days'],['2','More than half the days'],['3','Nearly every day']];
-const PCPTSD5 = [
-  'have had nightmares about it or thought about it when you did not want to?',
-  'tried hard not to think about it, or went out of your way to avoid situations that reminded you of it?',
-  'were constantly on guard, watchful, or easily startled?',
-  'felt numb or detached from people, activities, or your surroundings?',
-  'felt guilty or unable to stop blaming yourself or others for the event, or for problems the event may have caused?',
-];
-const BBGS = [
-  'During the past 12 months, have you become restless, irritable, or anxious when trying to stop or cut down on gambling?',
-  'During the past 12 months, have you tried to keep your family or friends from knowing how much you gambled?',
-  'During the past 12 months, did you have such financial trouble because of your gambling that you had to get help with living expenses from family, friends, or welfare?',
-];
-
-function buildScreening(){
-  const wrap = document.getElementById('screeningBody');
-  const r = STATE.raft;
-  let html = '';
-  let any = false;
-
-  if (r.addiction && r.addiction !== 'none'){
-    any = true;
-    html += screenBlock('cageaid', 'Substance use — CAGE-AID', CAGE_AID, 'yn');
-  }
-  if (r.flags.includes('eating')){
-    any = true;
-    html += screenBlock('scoff', 'Eating patterns — SCOFF', SCOFF, 'yn');
-  }
-  if (r.flags.includes('mood')){
-    any = true;
-    html += freqBlock('phq2', 'Mood — PHQ-2', 'Over the last 2 weeks, how often have you been bothered by:', PHQ2);
-    html += freqBlock('gad2', 'Anxiety — GAD-2', 'Over the last 2 weeks, how often have you been bothered by:', GAD2);
-    html += screenBlock('pcptsd5', 'PC-PTSD-5', PCPTSD5, 'yn', 'In your life, have you ever had any experience that was so frightening, horrible, or upsetting that, in the past month, you...');
-  }
-  if (r.flags.includes('gambling')){
-    any = true;
-    html += screenBlock('bbgs', 'Gambling — Brief Bio-Social Gambling Screen', BBGS, 'yn');
-  }
-  if (r.flags.includes('sexual')){
-    any = true;
-    html += `<div class="panel" style="background:var(--surface);box-shadow:none;">
-      <h2 style="font-size:15px;">Compulsive sexual behaviour <span class="pending-tag">Pending</span></h2>
-      <p class="lede" style="margin-bottom:0;">No short validated screening instrument for this has been selected yet in this framework — rather than invent one, this stays open as a conversation point for your worker instead of a scored question.</p>
-    </div>`;
-  }
-  if (!any){
-    html = '<p class="lede">Nothing you shared opened a follow-up screen — skip ahead.</p>';
-  }
-  wrap.innerHTML = html;
-}
-
-function screenBlock(key, title, items, type, intro){
-  let rows = items.map((q,i)=>`
-    <div class="field">
-      <label class="flabel">${intro ? (i+1)+'. ...'+q : q}</label>
-      <div class="yn-row">
-        <label><input type="radio" name="${key}_${i}" value="0"><span class="chip">No</span></label>
-        <label><input type="radio" name="${key}_${i}" value="1"><span class="chip">Yes</span></label>
-      </div>
-    </div>`).join('');
-  return `<div class="panel" style="background:var(--surface);box-shadow:none;">
-    <h2 style="font-size:15px;">${title}</h2>
-    ${intro ? `<p class="lede">${intro}</p>` : ''}
-    ${rows}
-  </div>`;
-}
-
-function freqBlock(key, title, intro, items){
-  let rows = items.map((q,i)=>`
-    <div class="field">
-      <label class="flabel">${q}</label>
-      <div class="yn-row">
-        ${FREQ_OPTIONS.map(([v,l])=>`<label><input type="radio" name="${key}_${i}" value="${v}"><span class="chip">${l}</span></label>`).join('')}
-      </div>
-    </div>`).join('');
-  return `<div class="panel" style="background:var(--surface);box-shadow:none;">
-    <h2 style="font-size:15px;">${title}</h2>
-    <p class="lede">${intro}</p>
-    ${rows}
-  </div>`;
-}
-
-function readRadioGroup(prefix, n){
-  let vals = [];
-  for (let i=0;i<n;i++){
-    const sel = document.querySelector(`input[name="${prefix}_${i}"]:checked`);
-    vals.push(sel ? parseInt(sel.value,10) : 0);
-  }
-  return vals;
-}
-
-function submitScreening(){
-  const r = STATE.raft;
-  const s = STATE.screening;
-  if (r.addiction !== 'none'){
-    const v = readRadioGroup('cageaid', CAGE_AID.length);
-    s.cageaid = { score: v.reduce((a,b)=>a+b,0), positive: v.reduce((a,b)=>a+b,0) >= 2 };
-  }
-  if (r.flags.includes('eating')){
-    const v = readRadioGroup('scoff', SCOFF.length);
-    s.scoff = { score: v.reduce((a,b)=>a+b,0), positive: v.reduce((a,b)=>a+b,0) >= 2 };
-  }
-  if (r.flags.includes('mood')){
-    const p = readRadioGroup('phq2', PHQ2.length);
-    const g = readRadioGroup('gad2', GAD2.length);
-    const pt = readRadioGroup('pcptsd5', PCPTSD5.length);
-    s.phq2 = { score: p.reduce((a,b)=>a+b,0), positive: p.reduce((a,b)=>a+b,0) >= 3 };
-    s.gad2 = { score: g.reduce((a,b)=>a+b,0), positive: g.reduce((a,b)=>a+b,0) >= 3 };
-    s.pcptsd5 = { score: pt.reduce((a,b)=>a+b,0), positive: pt.reduce((a,b)=>a+b,0) >= 3 };
-  }
-  if (r.flags.includes('gambling')){
-    const v = readRadioGroup('bbgs', BBGS.length);
-    s.bbgs = { score: v.reduce((a,b)=>a+b,0), positive: v.some(x=>x===1) };
-  }
-  buildQuestionnaire();
-  goTo('checkin');
-}
-
-
-// ============================================================
-// CHECK-IN (26 statements) + HALO-WBBRY COLOUR PROFILE
-// Merged from Flight Plan to Sobriety v2. Safety items now live in the safety gate.
-// ============================================================
-const QUESTIONS = [
-  // ── SECTION 1: WHITE — Baseline & Orientation (6, internal: Serotonin channel) ──
-  { id:'w1', section:0, text:'I have difficulty thinking clearly or concentrating on simple tasks.', sub:'PAWS Hurdle 1 — Cognitive Fog', why:'A common early sign that things feel like a lot right now.', colours:['WHITE'], dose:'S', paws:'H1' },
-  { id:'w2', section:0, text:'I feel exhausted even after sleeping, or I cannot maintain a regular sleep schedule.', sub:'PAWS Hurdle 3 — Sleep Architecture Disruption', why:'Sleep is often one of the first things disrupted by stress or change.', colours:['WHITE','BLACK'], dose:'S', paws:'H3' },
-  { id:'w3', section:0, text:'I feel overwhelmed by the number of services, forms, or systems I need to navigate.', sub:'Structural drift / first-contact overwhelm', why:'Figuring out "the system" is hard, even without anything else going on.', colours:['WHITE'], dose:'S' },
-  { id:'w4', section:0, text:'I am unsure where to go for help or what kind of help I actually need.', sub:'Orientation uncertainty', why:'Not knowing where to start is common, not a failing.', colours:['WHITE'], dose:'S' },
-  { id:'w5', section:0, text:'I struggle to follow through on plans I make for myself.', sub:'CENAPS Stage 2 — Mental relapse / structural drift', why:'Follow-through gets harder under stress — this isn\'t about willpower.', colours:['WHITE','BLACK'], dose:'S', paws:'drift' },
-  { id:'w6', section:0, text:'I often feel physically tired, hungry, or run down.', sub:'HALT: Tired / Hungry — vulnerability state', why:'Basic needs like food and rest change how everything else feels.', colours:['WHITE'], dose:'S', halt:true },
-
-  // ── SECTION 2: BLUE — Connection & Depth (8, internal: Oxytocin channel) ──
-  { id:'b1', section:1, text:'I feel emotionally numb or disconnected from people around me.', sub:'PAWS Hurdle 2 — Emotional Overreaction/Numbness', why:'Feeling distant from people is a common response to a hard stretch.', colours:['BLUE'], dose:'O', paws:'H2' },
-  { id:'b2', section:1, text:'I carry unresolved grief — a loss I have not fully processed.', sub:'Unprocessed grief → Oxytocin depletion', why:'Loss that hasn\'t been fully processed can show up in unexpected ways.', colours:['BLUE'], dose:'O' },
-  { id:'b3', section:1, text:'I have difficulty trusting people or letting them get close to me.', sub:'Attachment disruption / interpersonal conflict', why:'Trust can take a hit after difficult experiences — that\'s worth naming.', colours:['BLUE','BLACK'], dose:'O' },
-  { id:'b4', section:1, text:'I feel deeply lonely even when other people are around.', sub:'HALT: Lonely — isolation amplifier', why:'Loneliness can happen even surrounded by people.', colours:['BLUE'], dose:'O', halt:true },
-  { id:'b5', section:1, text:'I feel shame about my past that I cannot shake.', sub:'Shame — activates same limbic pathway as substance', why:'Shame about the past is common and rarely goes away on its own.', colours:['BLUE','BLACK'], dose:'O' },
-  { id:'b6', section:1, text:'Conflict with family members or a partner is a major source of stress for me.', sub:'Marlatt: Interpersonal conflict (~35% relapse trigger)', why:'Relationship stress is one of the most common everyday pressures.', colours:['BLUE'], dose:'O' },
-  { id:'b7', section:1, text:'I have lost important relationships because of my substance use or behaviour.', sub:'Relational consequence — Oxytocin circuit damage', why:'Losing relationships is a real cost worth acknowledging, not judging.', colours:['BLUE'], dose:'O' },
-  { id:'b8', section:1, text:'I find it hard to ask for help, even when I know I need it.', sub:'Identity erosion / surrender resistance', why:'Asking for help is hard for most people, especially after going it alone.', colours:['BLUE','WHITE'], dose:'O' },
-
-  // ── SECTION 3: YELLOW — Reactivity & Response  ──
-  { id:'y1', section:2, text:'Small stresses cause much bigger reactions in me than they should.', sub:'PAWS Hurdle 4 — Stress Hypersensitivity', why:'Big reactions to small things often mean the system is already stretched.', colours:['YELLOW'], dose:'E', paws:'H4' },
-  { id:'y2', section:2, text:'I experience strong cravings that come on suddenly and feel overwhelming.', sub:'PAWS Hurdle 5 — Cravings / Craving Confusion', why:'Cravings that come on fast and strong are common and manageable with the right support.', colours:['YELLOW','BLACK'], dose:'E', paws:'H5' },
-  { id:'y3', section:2, text:'I often feel angry or irritable and don\'t know why.', sub:'HALT: Angry — externalizing vulnerability state', why:'Irritability without a clear cause is common and worth naming.', colours:['YELLOW'], dose:'E', halt:true },
-  { id:'y4', section:2, text:'I have been in situations where someone directly offered me a substance and I couldn\'t say no.', sub:'Marlatt: Social pressure — direct offer', why:'Direct social pressure is one of the most common relapse triggers — this isn\'t a personal failing.', colours:['YELLOW','BLUE'], dose:'E' },
-  { id:'y5', section:2, text:'Certain places, people, or situations trigger strong urges to use.', sub:'Environmental cue reactivity', why:'Certain places or people can trigger urges — this is common and learnable to work with.', colours:['YELLOW'], dose:'E' },
-  { id:'y6', section:2, text:'I have used gambling, gaming, sex, or food to manage my emotions.', sub:'Process / behavioural addiction — Endorphin substitution', why:'Using something other than a substance to manage feelings still counts and is worth naming.', colours:['YELLOW','BLACK'], dose:'E' },
-  { id:'y7', section:2, text:'When stressed, I act before I think.', sub:'Autonomic hyperreactivity — prefrontal bypass', why:'Acting fast under stress is common, and it can be worked with.', colours:['YELLOW'], dose:'E' },
-
-  // ── SECTION 4: BLACK — Gravity & Transformation  ──
-  { id:'k1', section:3, text:'I no longer enjoy things that used to make me happy.', sub:'PAWS Hurdle 6 — Anhedonia', why:'Losing interest in things you used to enjoy is common in early recovery and tends to ease with time.', colours:['BLACK'], dose:'D', paws:'H6' },
-  { id:'k2', section:3, text:'I don\'t know who I am anymore without the substance or behaviour.', sub:'PAWS Hurdle 7 — Identity Confusion', why:'Not knowing "who you are" without the substance or behaviour is common, and temporary for most people.', colours:['BLACK'], dose:'D', paws:'H7' },
-  { id:'k3', section:3, text:'I have been through a residential treatment program before and returned to use.', sub:'CENAPS: Physical relapse stage / treatment cycling', why:'Returning to use after treatment is common — it doesn\'t mean treatment won\'t work this time.', colours:['BLACK','RED'], dose:'D' },
-  { id:'k4', section:3, text:'I feel like my nervous system is broken — constantly on edge or completely shut down.', sub:'Cortisol dominance / nervous system dysregulation', why:'Feeling constantly on edge or shut down is a real, physical response — not a character flaw.', colours:['BLACK'], dose:'D' },
-  { id:'k5', section:3, text:'I have experienced trauma that I have never fully addressed.', sub:'Unprocessed trauma — full D.O.S.E. disruption', why:'Unaddressed trauma is common, and it connects to a lot of what else shows up here.', colours:['BLACK','BLUE'], dose:'D' },
-
-  
-];
-
-const SECTIONS = [
-  { name:'WHITE — Baseline & Orientation', colour:'var(--white-col)', doseLabel:'Steadiness & orientation', count:6 },
-  { name:'BLUE — Connection & Depth', colour:'var(--blue)', doseLabel:'Connection', count:8 },
-  { name:'YELLOW — Reactivity & Response', colour:'var(--yellow)', doseLabel:'Stress response', count:7 },
-  { name:'BLACK — Gravity & Transformation', colour:'var(--black-col)', doseLabel:'Weight & change', count:5 },
-];
-const SCALE = ['Never','Rarely','Sometimes','Often','Always'];
-const answers = {};
-
-function buildQuestionnaire(){
-  const container = document.getElementById('q-sections');
-  let html = '', qIdx = 0;
-  SECTIONS.forEach((sec, si) => {
-    const sQuestions = QUESTIONS.filter(q => q.section === si);
-    html += `<div class="q-section${si===0?' open':''}" id="qsec-${si}">
-      <div class="q-section-header" onclick="toggleSection(${si})">
-        <span class="colour-pip" style="background:${sec.colour};${sec.colour.includes('white-col')?'border:1px solid #999;':''}"></span>
-        <h3>${sec.name}</h3>
-        <span class="section-meta">${sec.doseLabel} · ${sQuestions.length}Q</span>
-        <span class="chevron">▸</span>
-      </div>
-      <div class="q-section-body">`;
-    sQuestions.forEach(q => {
-      qIdx++;
-      html += `<div class="q-item"><div class="q-label">${qIdx}. ${q.text}</div><div class="q-sublabel">${q.why}</div><div class="q-scale">`;
-      SCALE.forEach((label, val) => {
-        html += `<label><input type="radio" name="${q.id}" value="${val}" onchange="onAnswer('${q.id}',${val})"><span class="chip">${label}</span></label>`;
-      });
-      html += `</div></div>`;
-    });
-    html += `</div></div>`;
-  });
-  container.innerHTML = html;
-}
-function toggleSection(idx){ document.getElementById('qsec-'+idx).classList.toggle('open'); }
-function onAnswer(id, val){
-  answers[id] = val;
-  const n = QUESTIONS.filter(q => answers[q.id] !== undefined).length;
-  document.getElementById('q-progress-fill').style.width = Math.round(n / QUESTIONS.length * 100) + '%';
-  document.getElementById('q-progress-text').textContent = n + ' / ' + QUESTIONS.length;
-}
-
-function scoreCheckin(){
-  const doseScores = { D:0, O:0, S:0, E:0 }, doseCounts = { D:0, O:0, S:0, E:0 };
-  const colourScores = { RED:0, BLUE:0, YELLOW:0, WHITE:0, BLACK:0 }, colourCounts = { RED:0, BLUE:0, YELLOW:0, WHITE:0, BLACK:0 };
-  const pawsHits = []; let haltCount = 0;
-  QUESTIONS.forEach(q => {
-    const val = answers[q.id]; if (val === undefined) return;
-    doseScores[q.dose] += val; doseCounts[q.dose]++;
-    q.colours.forEach(c => { colourScores[c] += val; colourCounts[c]++; });
-    if (q.paws && val >= 3) pawsHits.push(q.paws);
-    if (q.halt && val >= 3) haltCount++;
-  });
-  // RED comes from the safety gate and RAFT, not the check-in
-  const r = STATE.raft;
-  const redSignals = (STATE.safetyTriggered ? 2 : 0) + (r.roof === 'no' ? 1 : 0);
-  colourScores.RED = redSignals; colourCounts.RED = 3 / 4; // 0..3 signals → 0..100%
-  const dosePct = {}, colourPct = {};
-  ['D','O','S','E'].forEach(k => { dosePct[k] = doseCounts[k] ? Math.round(doseScores[k] / (doseCounts[k] * 4) * 100) : 0; });
-  ['RED','BLUE','YELLOW','WHITE','BLACK'].forEach(k => { colourPct[k] = colourCounts[k] ? Math.min(100, Math.round(colourScores[k] / (colourCounts[k] * 4) * 100)) : 0; });
-  const colourRanked = Object.entries(colourPct).filter(([k]) => k !== 'RED' || colourPct.RED > 50).sort((a,b) => b[1] - a[1]);
-  const primaryColour = colourRanked[0][0];
-  const secondaryColour = colourRanked[1] && colourRanked[1][1] > 25 ? colourRanked[1][0] : null;
-  const composite = Math.round((dosePct.D + dosePct.O + dosePct.S + dosePct.E) / 4);
-  let severity = 'Mild';
-  if (composite > 65) severity = 'High — worth talking through with someone';
-  else if (composite > 45) severity = 'Moderate';
-  else if (composite > 25) severity = 'Mild to moderate';
-  return { dosePct, colourPct, colourRanked, primaryColour, secondaryColour, composite, severity, pawsHits, haltCount };
-}
-
-function submitCheckin(){
-  const missing = QUESTIONS.filter(q => answers[q.id] === undefined).length;
-  const err = document.getElementById('checkinError');
-  if (missing){ err.textContent = missing + ' statement(s) still need an answer — open each section to find them.'; return; }
-  err.textContent = '';
-  STATE.hcs = document.getElementById('hcsText').value.trim();
-  STATE.profile = scoreCheckin();
-  renderResults();
-  goTo('results');
-}
-
-// The profile drives matching. hueColour = HALO-WBBRY primary colour.
-function computeMatch(){
-  const p = STATE.profile;
-  if (!p) return { hueColour:null, secondary:null, incomplete:true };
-  return { hueColour:p.primaryColour, secondary:p.secondaryColour, profile:p, incomplete:!STATE.hcs };
-}
-
-const COLOUR_MAP = {
-  RED:{ bg:'var(--red-bg)', col:'var(--red)', label:'Emergency / Crisis' },
-  BLUE:{ bg:'var(--blue-bg)', col:'var(--blue)', label:'Health & Depth' },
-  YELLOW:{ bg:'var(--yellow-bg)', col:'var(--yellow)', label:'Reactivity & Response' },
-  WHITE:{ bg:'var(--white-bg)', col:'var(--white-col)', label:'Foundation' },
-  BLACK:{ bg:'var(--black-bg)', col:'var(--black-col)', label:'Shadow & Transformation' },
-};
-function colourVar(c){ return (COLOUR_MAP[c] || {}).col || 'var(--ink-tertiary)'; }
-function colourBg(c){ return (COLOUR_MAP[c] || {}).bg || 'var(--surface-alt)'; }
-
-function renderResults(){
-  const m = computeMatch(), r = m.profile;
-  const doseNames = { D:'Motivation & enjoyment', O:'Connection', S:'Steadiness', E:'Stress relief' };
-  const doseColours = { D:'var(--dose-d)', O:'var(--dose-o)', S:'var(--dose-s)', E:'var(--dose-e)' };
-  let html = '';
-  if (STATE.safetyTriggered) html += `<div class="rule-box" style="border-color:var(--red);"><strong>Safety first:</strong> you answered yes to a safety question. Please call or text <strong>9-8-8</strong>, or <strong>9-1-1</strong> in immediate danger. Crisis services are listed first below.</div>`;
-  html += `<div class="callout" style="margin-bottom:20px;"><strong>Thank you for answering honestly.</strong> That took something. What follows is a reflection of what you told us, not a judgment and not a label. You decide what, if anything, to do next.</div>`;
-  html += `<h3 style="font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:18px;margin-bottom:8px;">Four areas of wellbeing</h3>`;
-  html += `<p style="font-size:14px;color:var(--ink-secondary);margin:0 0 14px 0;">These come from your own answers, not a medical test, and they are not a diagnosis. A higher number means more strain in that area.</p><div class="results-grid">`;
-  ['D','O','S','E'].forEach(k => {
-    html += `<div class="result-card" style="border-top-color:${doseColours[k]}"><div class="score" style="color:${doseColours[k]}">${r.dosePct[k]}%</div><div class="label">${doseNames[k]}</div><div class="sublabel">${r.dosePct[k] > 60 ? 'Worth exploring' : r.dosePct[k] > 35 ? 'Some strain' : 'Steady'}</div></div>`;
-  });
-  html += `</div><div style="background:var(--surface);border:1px solid var(--border-light);border-radius:8px;padding:16px;margin:16px 0;text-align:center;"><div style="font-family:'DM Sans',system-ui,sans-serif;font-size:32px;font-weight:700;color:var(--accent);">${r.composite}%</div><div style="font-size:13px;font-weight:600;color:var(--ink-secondary);">Overall strain across the four areas</div><div style="font-size:12px;color:var(--ink-tertiary);">${r.severity}</div></div>`;
-  html += `<h3 style="font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:18px;margin-bottom:10px;">HALO-WBBRY colour profile</h3><div style="background:var(--surface);border:1px solid var(--border-light);border-radius:8px;padding:16px;margin-bottom:16px;">`;
-  ['RED','BLUE','YELLOW','WHITE','BLACK'].forEach(c => {
-    const cm = COLOUR_MAP[c];
-    html += `<div class="dose-bar-row"><div class="dose-bar-label" style="color:${cm.col}">${c}</div><div class="dose-bar-track"><div class="dose-bar-fill" style="width:${r.colourPct[c]}%;background:${cm.col}"></div></div><div class="dose-bar-val" style="color:${cm.col}">${r.colourPct[c]}%</div></div>`;
-  });
-  html += `</div>`;
-  if (r.pawsHits.length || r.haltCount){
-    html += `<div class="callout"><strong>Worth noticing:</strong> `;
-    if (r.pawsHits.length) html += `${r.pawsHits.length} common early-recovery hurdle(s) showed up in your answers. These are a normal part of healing and usually ease with time. `;
-    if (r.haltCount) html += `${r.haltCount} everyday pressure point(s) showed up too (being hungry, angry, lonely or tired).`;
-    html += `</div>`;
-  }
-  const pcm = COLOUR_MAP[r.primaryColour];
-  html += `<div style="background:${pcm.bg};border-left:4px solid ${pcm.col};border-radius:0 8px 8px 0;padding:14px 18px;margin-top:16px;"><strong style="color:${pcm.col};">Primary colour: ${r.primaryColour} — ${pcm.label}</strong>${r.secondaryColour ? `<br><span style="font-size:13px;color:var(--ink-secondary);">Secondary: ${r.secondaryColour} — ${COLOUR_MAP[r.secondaryColour].label}</span>` : ''}<br><span style="font-size:12px;color:var(--ink-tertiary);">Services to look at first: those marked ${r.primaryColour}${r.secondaryColour ? ' + ' + r.secondaryColour : ''}.</span></div>`;
-  html += `<div style="background:var(--surface);border:1px solid var(--border-light);border-radius:8px;padding:16px 18px;margin-top:16px;"><h3 style="font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:17px;margin-bottom:6px;">Something to think about</h3><ul style="font-size:14.5px;line-height:1.7;padding-left:20px;margin:0;"><li>Looking at this, what stands out to you?</li><li>What is already going well, even a little?</li><li>If one thing here could feel different a month from now, what would you want it to be?</li><li>What is one small step that feels possible this week?</li></ul></div>`;
-  html += m.incomplete ? '<div class="rule-box" style="border-color:var(--yellow);">You didn\'t name where you want to go and be, so treat the lists below as a starting conversation, not a match.</div>' : '';
-  document.getElementById('results-content').innerHTML = html;
-
-  const rr = STATE.raft, s = STATE.screening;
-  let summary = `<p><strong>Where you want to go and be:</strong> ${escapeHtml(STATE.hcs) || '—'}</p>`;
-  summary += `<p><strong>What you need most right now:</strong> ${escapeHtml(rr.target) || '—'}</p>`;
-  summary += `<p><strong>Roof tonight:</strong> ${rr.roof || '—'} &nbsp; <strong>Fundamentals needed:</strong> ${rr.fundamentals.length ? rr.fundamentals.join(', ') : 'none selected'}</p>`;
-  const screenLines = screeningLines(s, rr);
-  if (screenLines.length) summary += `<p><strong>Screens (not diagnoses):</strong><br>${screenLines.join('<br>')}</p>`;
-  document.getElementById('raftSummaryBody').innerHTML = summary;
-
-  renderOrgMatches(m);
-  renderClinicianChoices(m);
-  renderDirectory();
-}
-
-function screeningLines(s, r){
-  const L = [];
-  if (s.cageaid) L.push(`CAGE-AID: ${s.cageaid.score}/4${s.cageaid.positive?' — positive screen':''}`);
-  if (s.scoff) L.push(`SCOFF: ${s.scoff.score}/5${s.scoff.positive?' — positive screen':''}`);
-  if (s.phq2) L.push(`PHQ-2: ${s.phq2.score}/6${s.phq2.positive?' — positive screen':''}`);
-  if (s.gad2) L.push(`GAD-2: ${s.gad2.score}/6${s.gad2.positive?' — positive screen':''}`);
-  if (s.pcptsd5) L.push(`PC-PTSD-5: ${s.pcptsd5.score}/5${s.pcptsd5.positive?' — positive screen':''}`);
-  if (s.bbgs) L.push(`Gambling screen: ${s.bbgs.positive?'positive':'negative'}`);
-  if (r.flags.includes('sexual')) L.push('Compulsive sexual behaviour flagged — no instrument used, worker follow-up only');
-  return L;
-}
-
-function renderOrgMatches(m){
-  const wrap = document.getElementById('orgMatches');
-  const r = m.profile; if (!r){ wrap.innerHTML = ''; return; }
-  const near = regionFromPostal(STATE.postal);
-  const scored = ORGS.map(o => {
-    let score = 0, maxPossible = 0;
-    o.colours.forEach(c => { score += (r.colourPct[c] || 0); maxPossible += 100; });
-    if (o.colours.includes(r.primaryColour)) score += 30;
-    if (r.secondaryColour && o.colours.includes(r.secondaryColour)) score += 15;
-    if (near && (o.r === near || o.r === 'Province-wide')) score += 15;
-    if (o.colours.includes('RED') && !STATE.safetyTriggered) score -= 20;
-    if (STATE.safetyTriggered && o.colours.includes('RED')) score += 50;
-    return { o, matchPct: Math.max(0, Math.min(99, Math.round(score / (maxPossible + 45) * 100))) };
-  }).sort((a,b) => b.matchPct - a.matchPct);
-  const top = scored.filter(x => x.matchPct > 30).slice(0, 10);
-  let html = `<p class="lede">Ranked by how closely each service's colours line up with your profile${near ? ', with services in or near ' + near + ' moved up' : ''}. This is not a clinical recommendation: these are services that offer this kind of support. Organizations have not yet confirmed their details or colours, so a worker calls before any referral.</p>`;
-  if (!top.length){ wrap.innerHTML = html + '<p class="lede">No strong colour matches — a worker would match by hand from what you told us.</p>'; return; }
-  html += top.map(({o, matchPct}) => `
-    <div class="match-card" style="border:1px solid var(--border-light);border-radius:8px;padding:14px 16px;margin-bottom:10px;background:var(--surface);">
-      <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer;">
-        <input type="checkbox" class="orgChoice" value="${escapeHtml(o.n)}" style="margin-top:4px;">
-        <span style="flex:1;min-width:0;">
-          <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap;"><strong style="font-family:'DM Sans',system-ui,sans-serif;">${o.n}</strong><span style="font-size:11px;color:var(--ink-tertiary);">Colour match ${matchPct}%</span></div>
-          <div style="font-size:12.5px;color:var(--ink-secondary);margin-top:4px;">${o.r} · ${o.note} · ${o.f} · ${o.d}</div>
-          <div style="margin-top:6px;">${o.colours.map(c => `<span class="colour-tag" style="background:${colourBg(c)};color:${colourVar(c)};border:1px solid ${colourVar(c)};font-size:10.5px;padding:3px 9px;">${c}</span>`).join(' ')}</div>
-        </span>
-      </label>
-    </div>`).join('') + '<p class="fhint">Check any you\'d want to move forward with — this feeds the Worker Review → Member Choice step below.</p>';
-  wrap.innerHTML = html;
-}
-
-function renderDirectory(){
-  const tb = document.getElementById('dir-tbody'); if (!tb) return;
-  const col = document.getElementById('dirColour').value, cat = document.getElementById('dirCat').value, nearOn = document.getElementById('dirNear').checked;
-  const near = regionFromPostal(STATE.postal);
-  let list = ORGS;
-  if (col !== 'all') list = list.filter(o => o.colours.includes(col));
-  if (cat !== 'all') list = list.filter(o => o.c === cat);
-  const note = document.getElementById('dirNote');
-  if (nearOn && near){ list = list.filter(o => o.r === near || o.r === 'Province-wide'); note.textContent = 'Showing ' + near + ' and province-wide services.'; }
-  else if (nearOn){ note.textContent = 'Add a postal code on the first screen to use this filter.'; }
-  else note.textContent = '';
-  const catLabels = { substance:'Substance use', behavioural:'Behavioural / eating', housing:'Housing / shelter', crisis:'Crisis / navigation' };
-  tb.innerHTML = list.map(o => `<tr style="border-top:1px solid var(--border-light);"><td style="padding:6px;"><strong>${o.n}</strong><br><span style="color:var(--ink-tertiary);">${o.note}</span></td><td style="padding:6px;">${o.r}</td><td style="padding:6px;">${catLabels[o.c] || o.c}</td><td style="padding:6px;">${o.colours.join(' + ')}</td><td style="padding:6px;">${o.f}</td><td style="padding:6px;">${o.d}</td></tr>`).join('') || '<tr><td colspan="6" style="padding:16px;text-align:center;color:var(--ink-tertiary);">No organizations match these filters.</td></tr>';
-}
-
-function continueAfterCrisis(){
-  STATE.safetyTriggered = true;
-  goTo('raft');
-}
-
+})();
 </script>
+</body>
+</html>
