@@ -20,4 +20,4 @@ The earlier public repository (`GSRT---CCGBI---GTT---EDU-REV---AI-ALIGNMENT`) co
 | Two separate RWOB intakes | One merged intake | Safety items aligned to C-SSRS wording; US crisis line replaced with NEDIC; unbuilt Hue/Shade/Tint scoring removed; the "worker will call within 48 hours" promise removed |
 | Duplicate files, a 1-byte "system flow diagram", a plain-text file named .docx, and links to missing files | Not carried over | Housekeeping |
 
-Superseded documents (the old Mathematics Manual FINAL and Addendum UPDATED) are not included. The corrected Addendum is in this repository.
+Superseded documents (the old Mathematics Manual FINAL and Addendum UPDATED) are not included. The corrected Addendum is in `03_Evidence`.

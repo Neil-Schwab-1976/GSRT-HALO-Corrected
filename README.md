@@ -28,18 +28,16 @@ This repository holds the corrected versions of the GSRT / MASH / RWOB documents
 
 ## What's in here
 
-| File | What it is |
-| --- | --- |
-| `index.html` | The homepage. With GitHub Pages turned on, it links to everything below. |
-| `GSRT_Institutional_Dossier_24_One-Pagers.pdf` | **Start here.** 24 designed pages that follow one person, Marcus: the worker conversation, the Choice Point, Path B, MASH (one page per gear), then Earthworks and the numbers. |
-| `MASH Antifragile Locked Specification` (.pdf, .docx) | The locked camp specification: who it's for, the site, the 3-month pathway, daily rhythm, graduation, the app, G.A.P.S. firmware, safeguards, measurement, costs and open decisions. |
-| `GSRT_Citations_Evidence_Addendum` (.pdf, .docx) | Source trail for every figure, with what was traced, what wasn't, and what changed. |
-| `LRP_Marcus_ROI_Workbook_AUDITED.xlsx` | Life Recovery Pathway ROI workbook. All inputs are editable, so anyone can enter their own numbers. |
-| `RWOB_Intake_MERGED.html` | Merged RWOB intake prototype: member profile (contact optional), safety gate, RAFT, validated screens, 26-item check-in, HALO-WBBRY colour result, organization and clinician matches. Demo only: it stores nothing and contacts no one. |
-| `RWOB_Outreach_ColourMatch_Tracking_V2_2.docx`, `TREATMENT_PATHWAY_MASTER_SEXTON_MANUAL_v2.docx` | Outreach tracker and Sexton treatment-pathway manual, with WHMIS wording replaced by the HALO-WBBRY colour key. |
-| `CHANGES.md` | What was corrected from earlier versions, and why. |
+| Folder | File | What it is |
+| --- | --- | --- |
+| `01_Start_Here` | `GSRT_Institutional_Dossier_24_One-Pagers.pdf` | 24 designed pages that follow one person, Marcus: the worker conversation, the Choice Point, Path B, MASH (one page per gear), then Earthworks and the numbers. Start here. |
+| `02_MASH` | `MASH_Antifragile_Locked_Specification` (.pdf, .docx, .md) | The locked camp specification: who it's for, the site, the 3-month pathway, daily rhythm, graduation, the app, G.A.P.S. firmware, safeguards, measurement, costs and open decisions. The .md copy has text only; the images are in the .pdf and .docx. |
+| `03_Evidence` | `GSRT_Citations_Evidence_Addendum` (.pdf, .docx) | Source trail for every figure, with what was traced, what wasn't, and what changed. |
+| `04_LRP` | `LRP_Marcus_ROI_Workbook_AUDITED.xlsx` | Life Recovery Pathway ROI workbook. All inputs are editable, so anyone can enter their own numbers. |
+| `05_RWOB_Intake` | `index.html` | Merged RWOB intake prototype: member profile (contact optional), safety gate, RAFT, validated screens, 26-item check-in, HALO-WBBRY colour result, organization and clinician matches. Demo only: it stores nothing and contacts no one. |
+| `05_RWOB_Intake` | `RWOB_Outreach_ColourMatch_Tracking_V2_2.docx`, `TREATMENT_PATHWAY_MASTER_SEXTON_MANUAL_v2.docx` | Outreach tracker and Sexton treatment-pathway manual, with WHMIS wording replaced by the HALO-WBBRY colour key. |
 
-**To open it as a website:** turn on GitHub Pages (Settings → Pages → Deploy from branch → `main`, folder `/ (root)`). The site address will be `https://neil-schwab-1976.github.io/GSRT-HALO-Corrected/`. Free accounts need the repository to be public for Pages.
+**To try the intake:** turn on GitHub Pages (Settings → Pages → Deploy from branch → `main`, root) and open `/05_RWOB_Intake/`. You can also download `index.html` and open it in a browser.
 
 ## The core numbers (Conservative track unless noted)
 
@@ -70,9 +68,9 @@ The three tracks are never blended.
 
 ## How to check the math
 
-1. Open `LRP_Marcus_ROI_Workbook_AUDITED.xlsx`. Change any input cell, and every result recalculates.
+1. Open `04_LRP/LRP_Marcus_ROI_Workbook_AUDITED.xlsx`. Change any input cell, and every result recalculates.
 2. Re-run the MASH figures from the table above with a calculator. Every line shows its formula.
-3. Look up each source in the Citations & Evidence Addendum. Where the Addendum says a figure could not be traced, it isn't used as an anchor.
+3. Look up each source in `03_Evidence`. Where the Addendum says a figure could not be traced, it isn't used as an anchor.
 
 ## Still open (to settle before a costed proposal goes to a funder)
 
