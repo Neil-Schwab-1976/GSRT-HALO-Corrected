@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HALO GSRT Pathway</title>
+<meta name="description" content="Street-level intake → 3-month MASH Antifragile recovery camp → paid work at GSRT Earthworks. Proposal, costed model, evidence trail and intake prototype. Modelled figures, not pilot data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3ECDC; --panel:#FBF7EE; --ink:#1E1E1A; --muted:#5C574B; --line:#D9CFB8;
+  --green:#1F4D3A; --navy:#1D2F4F; --gold:#7A5C14; --red:#8E2F23;
+  --green-soft:#E3EBE3; --gold-soft:#F1E6C8;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#171a17; --panel:#20241f; --ink:#ECE6D6; --muted:#ABA48F; --line:#363b33;
+    --green:#7FBF9C; --navy:#9DB4DB; --gold:#D9B56A; --red:#E08A7C;
+    --green-soft:#223127; --gold-soft:#2f2a1c;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#171a17; --panel:#20241f; --ink:#ECE6D6; --muted:#ABA48F; --line:#363b33;
+  --green:#7FBF9C; --navy:#9DB4DB; --gold:#D9B56A; --red:#E08A7C;
+  --green-soft:#223127; --gold-soft:#2f2a1c;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Source Sans 3",system-ui,sans-serif}
+a{color:var(--green)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.15;margin:0}
+h2{font-size:2.1rem;color:var(--navy);margin-bottom:.4rem}
+h3{font-size:1.35rem;color:var(--ink)}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+section{padding:56px 0;border-top:1px solid var(--line)}
+.lede{color:var(--muted);max-width:68ch;margin:.5rem 0 1.6rem}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;height:56px;overflow-x:auto;white-space:nowrap}
+nav .brand{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.25rem;color:var(--green);text-decoration:none;margin-right:auto}
+nav a.l{color:var(--muted);text-decoration:none;font-size:.92rem;font-weight:600}
+nav a.l:hover{color:var(--green)}
+#theme{background:none;border:1px solid var(--line);color:var(--muted);border-radius:6px;padding:4px 9px;cursor:pointer;font:inherit;font-size:.85rem}
+
+/* hero */
+.hero{padding:72px 0 56px;border-top:0}
+.hero h1{font-size:clamp(2.6rem,7vw,4.4rem);color:var(--green)}
+.hero .sub{font-family:"Cormorant Garamond",serif;font-size:clamp(1.3rem,3vw,1.75rem);color:var(--navy);margin:.6rem 0 1.4rem;max-width:30ch}
+.status{display:inline-block;border:1px solid var(--red);color:var(--red);border-radius:999px;padding:4px 14px;font-size:.85rem;font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.95rem}
+.btn.p{background:var(--green);color:var(--bg)}
+.btn.s{border:1.5px solid var(--green);color:var(--green)}
+
+/* flow */
+.flow{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(7,1fr);gap:8px;counter-reset:s}
+.flow li{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 12px 16px;counter-increment:s}
+.flow li::before{content:counter(s);display:block;font-family:"Cormorant Garamond",serif;font-size:1.6rem;font-weight:700;color:var(--gold);line-height:1}
+.flow b{display:block;margin:.35rem 0 .2rem;font-size:.98rem;color:var(--navy)}
+.flow span{font-size:.85rem;color:var(--muted);line-height:1.4;display:block}
+.flow li.key{background:var(--green-soft);border-color:var(--green)}
+@media (max-width:900px){.flow{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.flow{grid-template-columns:1fr}}
+
+/* honesty */
+.honest{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.honest div{border-left:3px solid var(--gold);background:var(--gold-soft);padding:12px 14px;border-radius:0 8px 8px 0;font-size:.95rem}
+.honest b{color:var(--ink)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:28px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
+.stat .n{font-family:"Cormorant Garamond",serif;font-size:2.2rem;font-weight:700;color:var(--green);line-height:1}
+.stat .t{font-weight:600;margin:.35rem 0 .2rem}
+.stat .f{font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-variant-numeric:tabular-nums}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);font-size:.95rem}
+th{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td.num,th.num{text-align:right}
+tr.hl td{background:var(--green-soft);font-weight:700}
+tr:last-child td{border-bottom:0}
+.note{font-size:.88rem;color:var(--muted);margin-top:10px}
+
+/* docs */
+.docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.doc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column}
+.doc .tag{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.doc h3{margin:.3rem 0 .4rem}
+.doc p{font-size:.94rem;color:var(--muted);margin:0 0 14px;flex:1}
+.doc .links{display:flex;flex-wrap:wrap;gap:8px}
+.doc .links a{font-size:.85rem;font-weight:700;text-decoration:none;border:1px solid var(--line);border-radius:6px;padding:5px 10px;color:var(--green)}
+.doc .links a:hover{border-color:var(--green)}
+.doc.start{border:2px solid var(--green)}
+
+/* open */
+.open{columns:2 300px;column-gap:28px;padding-left:1.1rem;margin:0}
+.open li{margin-bottom:10px;break-inside:avoid}
+
+footer{border-top:1px solid var(--line);padding:36px 0 48px;font-size:.9rem;color:var(--muted)}
+.crisis{background:var(--navy);color:#fff;border-radius:10px;padding:14px 18px;margin-bottom:20px;font-size:.95rem}
+:root[data-theme="dark"] .crisis{color:#111}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .crisis{color:#111}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top">HALO GSRT Pathway</a>
+  <a class="l" href="#pathway">Pathway</a>
+  <a class="l" href="#numbers">Numbers</a>
+  <a class="l" href="#documents">Documents</a>
+  <a class="l" href="#open">Still open</a>
+  <button id="theme" type="button" aria-label="Toggle light or dark mode">◐</button>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div class="eyebrow">MASH Antifragile · RWOB · GSRT Earthworks</div>
+  <h1>HALO GSRT Pathway</h1>
+  <p class="sub">From street-level intake to a three-month recovery camp to paid work restoring the land.</p>
+  <span class="status">Proposal and prototype: not funded, not in service, not clinically reviewed</span>
+  <div class="cta">
+    <a class="btn p" href="01_Start_Here/GSRT_Institutional_Dossier_24_One-Pagers.pdf">Read the 24-page dossier</a>
+    <a class="btn s" href="05_RWOB_Intake/">Try the intake demo</a>
+  </div>
+</div></header>
+
+<section id="pathway"><div class="wrap">
+  <div class="eyebrow">The pathway</div>
+  <h2>One person, seven steps</h2>
+  <p class="lede">A person caught in the cycle of emergency rooms, police contact and shelters is offered an honest choice, not an assignment. Path B leads through a peer-run, land-based camp, with medical care alongside it, never in place of it. It ends in paid work.</p>
+  <ol class="flow">
+    <li><b>Worker conversation</b><span>A trauma- and addiction-informed first contact</span></li>
+    <li><b>RWOB intake</b><span>Safety gate, RAFT, validated screens, colour routing</span></li>
+    <li><b>Choice Point</b><span>Path A and Path B presented honestly; Path B is never assigned</span></li>
+    <li class="key"><b>MASH Antifragile</b><span>3 months, 200 beds, 20 nodes, shadow pairing in the first month</span></li>
+    <li><b>Senior &amp; mentor</b><span>In month 3, shadow a newcomer of your own</span></li>
+    <li><b>DEEDSPROOF</b><span>Graduation badge: Trust · Stabilize · Begin</span></li>
+    <li class="key"><b>GSRT Earthworks</b><span>Paid environmental restoration at $22/hr</span></li>
+  </ol>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow">Read this first</div>
+  <h2>What is modelled and what is measured</h2>
+  <p class="lede">These documents were corrected to say only what can be backed up.</p>
+  <div class="honest">
+    <div><b>Every dollar figure is a simulation</b> built on conservative published floors. It becomes evidence only when pilot data replaces it.</div>
+    <div><b>Marcus and Laura are illustrative cases,</b> not real participants.</div>
+    <div><b>The W-score is a wellbeing index,</b> not dollars. It is never mixed with costs.</div>
+    <div><b>Nothing here was “verified” by AI.</b> Check the arithmetic yourself; every formula is shown.</div>
+    <div><b>Partners named are proposed.</b> None is signed.</div>
+  </div>
+</div></section>
+
+<section id="numbers"><div class="wrap">
+  <div class="eyebrow">The numbers · Conservative track</div>
+  <h2>What it costs and what it has to save</h2>
+  <p class="lede">One camp: 200 beds, about 600 three-month stays a year, with return stays housed inside the same beds.</p>
+  <div class="stats">
+    <div class="stat"><div class="n">$7,500</div><div class="t">per 3-month stay</div><div class="f">90 × $80 + 3 × $60 = $7,380, rounded up</div></div>
+    <div class="stat"><div class="n">$11.25M</div><div class="t">Year 1 gross</div><div class="f">$4.5M participants = the 40% stream; ÷ 0.40</div></div>
+    <div class="stat"><div class="n">≈$14.48M</div><div class="t">steady state with returns</div><div class="f">525 × 30 days × $82 = $1.29M; ÷ 0.40 = +$3.23M</div></div>
+    <div class="stat"><div class="n">23.4%</div><div class="t">break-even at $80K</div><div class="f">$18,750 per person ÷ $80,000</div></div>
+  </div>
+
+  <h3 style="margin-bottom:10px">Break-even: share of current public cost MASH must avoid</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Public cost / person / year</th><th>Track</th><th class="num">First stays</th><th class="num">With returns</th></tr></thead>
+    <tbody>
+      <tr><td>$120,000</td><td>Observed</td><td class="num">15.6%</td><td class="num">20.1%</td></tr>
+      <tr class="hl"><td>$80,000</td><td>Conservative</td><td class="num">23.4%</td><td class="num">30.2%</td></tr>
+      <tr><td>$56,000</td><td>Evidence Floor (Latimer et al. 2017)</td><td class="num">33.5%</td><td class="num">43.1%</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">The three tracks are never blended. Sources and trace status for each are in the Citations &amp; Evidence Addendum.</p>
+
+  <div class="stats" style="margin-top:28px;margin-bottom:0">
+    <div class="stat"><div class="n">7.28</div><div class="t">LRP net return (Marcus)</div><div class="f">ΔCost $76,500 ÷ $9,238 = 8.28 gross; payback 44 days</div></div>
+    <div class="stat"><div class="n">$765K</div><div class="t">LRP 10-year value</div><div class="f">$76,500 × 10, with no ripple factor</div></div>
+    <div class="stat"><div class="n">$33,000</div><div class="t">Earthworks wage per year</div><div class="f">6 h × 5 d × 50 wk × $22</div></div>
+  </div>
+</div></section>
+
+<section id="documents"><div class="wrap">
+  <div class="eyebrow">Documents</div>
+  <h2>Everything in the repository</h2>
+  <p class="lede">PDFs open in the browser. Word and Excel files download.</p>
+  <div class="docs">
+    <div class="doc start">
+      <div class="tag">01 · Start here</div>
+      <h3>Institutional Dossier: 24 One-Pagers</h3>
+      <p>Follows Marcus from the worker conversation through the Choice Point, Path B and every MASH gear, then into Earthworks and the numbers.</p>
+      <div class="links"><a href="01_Start_Here/GSRT_Institutional_Dossier_24_One-Pagers.pdf">PDF</a></div>
+    </div>
+    <div class="doc">
+      <div class="tag">02 · MASH</div>
+      <h3>MASH Antifragile Locked Specification</h3>
+      <p>Who it's for, the site, the 3-month pathway, daily rhythm, graduation, the app, G.A.P.S. firmware, safeguards, measurement, costs and open decisions.</p>
+      <div class="links"><a href="02_MASH/MASH_Antifragile_Locked_Specification.pdf">PDF</a><a href="02_MASH/MASH_Antifragile_Locked_Specification.docx">Word</a><a href="02_MASH/MASH_Antifragile_Locked_Specification.md">Text</a></div>
+    </div>
+    <div class="doc">
+      <div class="tag">03 · Evidence</div>
+      <h3>Citations &amp; Evidence Addendum</h3>
+      <p>The source trail for every figure: what was traced, what wasn't, and what changed.</p>
+      <div class="links"><a href="03_Evidence/GSRT_Citations_Evidence_Addendum.pdf">PDF</a><a href="03_Evidence/GSRT_Citations_Evidence_Addendum.docx">Word</a></div>
+    </div>
+    <div class="doc">
+      <div class="tag">04 · LRP</div>
+      <h3>LRP ROI Workbook (audited)</h3>
+      <p>Life Recovery Pathway return model. Every input is editable, so you can test it with your own numbers.</p>
+      <div class="links"><a href="04_LRP/LRP_Marcus_ROI_Workbook_AUDITED.xlsx">Excel</a></div>
+    </div>
+    <div class="doc">
+      <div class="tag">05 · RWOB intake</div>
+      <h3>Merged Intake Prototype</h3>
+      <p>Member profile (contact optional), safety gate, RAFT, validated screens, 26-item check-in, HALO-WBBRY result and service matches. A demo that stores nothing and contacts no one.</p>
+      <div class="links"><a href="05_RWOB_Intake/">Open demo</a></div>
+    </div>
+    <div class="doc">
+      <div class="tag">05 · RWOB tools</div>
+      <h3>Outreach Tracker &amp; Sexton Manual</h3>
+      <p>Outreach colour-match tracker (V2.2) and the treatment-pathway master manual (v2), using the HALO-WBBRY colour key.</p>
+      <div class="links"><a href="05_RWOB_Intake/RWOB_Outreach_ColourMatch_Tracking_V2_2.docx">Tracker</a><a href="05_RWOB_Intake/TREATMENT_PATHWAY_MASTER_SEXTON_MANUAL_v2.docx">Manual</a></div>
+    </div>
+  </div>
+  <p class="note">What was corrected from earlier versions, and why: <a href="CHANGES.md">CHANGES.md</a></p>
+</div></section>
+
+<section id="open"><div class="wrap">
+  <div class="eyebrow">Honest gaps</div>
+  <h2>Still open</h2>
+  <p class="lede">These must be settled before a costed proposal goes to a funder.</p>
+  <ul class="open">
+    <li><b>Operator.</b> A non-profit, co-op or Nation-run entity to run the camp, with the G.A.P.S. IP licensed to it.</li>
+    <li><b>Site and medical partner.</b> Crown land near Cobalt / Coleman Township, or an alternative; a mobile team or RAAM clinic.</li>
+    <li><b>Year 1 Controllers.</b> 40 hired peer workers at about $45K would take about $1.8M of the $2.25M Operations stream.</li>
+    <li><b>User Area.</b> Supervised consumption needs a Health Canada s. 56.1 exemption.</li>
+    <li><b>Earthworks capacity.</b> 200 jobs against about 600 graduates a year.</li>
+    <li><b>Naming and mapping.</b> Block 10 has no name and Block 4 has two; the G.A.P.S. mapping differs between documents.</li>
+    <li><b>Retreat map.</b> The week-by-week 3-Day Get-A-Way map for the 13-week stay, and the DEEDSPROOF module fixes.</li>
+    <li><b>Mathematics Manual.</b> Being corrected; it will be added once fixed.</li>
+  </ul>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="crisis">In Canada, call or text <b>9-8-8</b> (Suicide Crisis Helpline, 24/7). In an emergency, call <b>9-1-1</b>.</div>
+  <p>© 2026 Neil J. Schwab · HALO Antifragile AI. All rights reserved. G.A.P.S., HALO-WBBRY, DEEDSPROOF and Fish Bowl Method™ are working names; none is a registered mark.</p>
+</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement, b=document.getElementById('theme');
+  try{var s=localStorage.getItem('theme'); if(s) root.setAttribute('data-theme',s);}catch(e){}
+  b.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    var next=dark?'light':'dark'; root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
